@@ -67,9 +67,9 @@ const WhyChooseUs: React.FC = () => {
               custom={1}
               className="text-gray-600 text-lg leading-relaxed mb-10"
             >
-              We build websites and digital futures. Our
-              philosophy blends collaboration, creativity, and precision to
-              deliver experiences that accelerate your growth.
+              We build websites and digital futures. Our philosophy blends
+              collaboration, creativity, and precision to deliver experiences
+              that accelerate your growth.
             </motion.p>
 
             <div className="space-y-8">
@@ -134,7 +134,7 @@ const WhyChooseUs: React.FC = () => {
 
               {/* Image */}
               <motion.img
-                src="/ugob.jpg"
+                src="/ugob.webp"
                 alt="Ugo.B"
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 120, damping: 12 }}

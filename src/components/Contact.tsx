@@ -385,7 +385,7 @@ const Contact = () => {
             <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100">
               <div className="h-48 relative group cursor-pointer">
                 <img
-                  src="/map.png"
+                  src="/map.webp"
                   alt="Map of Owerri"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />

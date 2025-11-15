@@ -9,7 +9,7 @@ const testimonials: Testimonial[] = [
       "Working with Ugo.B was an absolute game changer for us. He crafted a digital experience. His dedication and skill are unmatched.",
     name: "Bethel C. Bright",
     title: "Zonal Director, LAWSAN South East",
-    image: "/bethel.jpg",
+    image: "/bethel.webp",
   },
   {
     quote:

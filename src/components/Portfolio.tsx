@@ -16,7 +16,7 @@ type Project = {
 
 const projects: Project[] = [
   {
-    image: "/lawsanse.png",
+    image: "/lawsanse.webp",
     title: "LAWSAN SE",
     description:
       "Official website of The Law Students' Association of Nigeria, South East Zone.",
@@ -25,7 +25,7 @@ const projects: Project[] = [
     metrics: { duration: "2 months", impact: "300% student participation" },
   },
   {
-    image: "/jurismemo.png",
+    image: "/jurismemo.webp",
     title: "JURISMEMO",
     description: "Legal resources tool for Nigerian Lawyers and Law students.",
     tags: ["AI", "Ajax", "PHP"],
@@ -36,7 +36,7 @@ const projects: Project[] = [
     },
   },
   {
-    image: "/richiespot.png",
+    image: "/richiespot.webp",
     title: "Richie's Pot",
     description: "An E-commerce Web App for a Nigerian Restaurant.",
     tags: ["React", "Node Js", "E-commerce"],
@@ -44,7 +44,7 @@ const projects: Project[] = [
     metrics: { duration: "4 weeks", impact: "300% sales" },
   },
   {
-    image: "/lss.png",
+    image: "/lss.webp",
     title: "LSS UNILAWRIN",
     description:
       "Official website for Law Students' Society University of Illorin.",
