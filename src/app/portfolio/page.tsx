@@ -1,11 +1,21 @@
 import React from "react";
 import Portfolio from "@/components/Portfolio";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Portfolio",
+  description:
+    "Explore the diverse portfolio of Build With Ugo.B, showcasing our expertise in creating high-performance, SEO-optimized websites that drive real business results.",
+  openGraph: {
+    title: "Portfolio of Build With Ugo.B",
+    url: "https://build-with-ugob.com.ng/portfolio",
+  },
+};
 
 const PortfolioPage = () => {
   return (
     <div className="min-h-screen bg-white">
-
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
         {/* Background decorations */}

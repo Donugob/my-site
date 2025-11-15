@@ -5,12 +5,61 @@ import { Inter } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
+const siteUrl = "https://build-with-ugob.com.ng";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Build With Ugo.B | Web Development Agency in Owerri",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Build With Ugo.B — Web Development Agency in Owerri",
+    template: "%s | Build With Ugo.B",
+  },
   description:
-    "Professional web development services in Owerri. Modern, fast, SEO‑optimized websites.",
+    "Build With Ugo.B is a premium web development agency based in Owerri, Imo State, creating high performance websites, SEO-optimized brands, and scalable digital experiences.",
+  keywords: [
+    "Owerri web developer",
+    "Nigeria web design agency",
+    "SEO services",
+    "Build With Ugo.B",
+    "website designer in Imo State",
+    "full-stack developer Nigeria",
+  ],
+  openGraph: {
+    type: "website",
+    url: siteUrl,
+    siteName: "Build With Ugo.B",
+    title: "Build With Ugo.B — Web Development Agency in Owerri",
+    description:
+      "High-performance websites, modern UI/UX, and top-tier SEO. Build With Ugo.B delivers fast, scalable digital experiences.",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Build With Ugo.B — Web Development Agency",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Build With Ugo.B — Web Development Agency in Owerri",
+    description:
+      "Premium web development and SEO services in Nigeria. Let's build your digital success.",
+    images: ["/og-image.jpg"],
+    creator: "@Don_ugob",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
 };
 
 export default function RootLayout({

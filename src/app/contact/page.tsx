@@ -1,7 +1,17 @@
 import React from "react";
 import Contact from "@/components/Contact";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import type { Metadata } from "next";
+
+
+export const metadata: Metadata = {
+  title: "Contact Us",
+  description:
+    "Get in touch with Build With Ugo.B for inquiries, support, or to start your next project. We're here to help you build high-performance, SEO-optimized digital experiences.",
+  openGraph: {
+    title: "Contact Build With Ugo.B",
+    url: "https://build-with-ugob.com.ng/contact",
+  },
+};
 
 const ContactPage = () => {
   return (
