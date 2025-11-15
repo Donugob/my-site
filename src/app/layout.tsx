@@ -69,6 +69,35 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <meta
+          property="og:image"
+          content="https://www.build-with-ugob.com.ng/og-image.jpg"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Ugo.B Technologies" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Build With Ugo.B — Web Development Agency"
+        />
+        <meta
+          name="twitter:description"
+          content="Premium web development and SEO services in Nigeria. Let's build your digital success."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.build-with-ugob.com.ng/og-image.jpg"
+        />
+        <meta
+          name="twitter:image:alt"
+          content="Ugo.B Solutions"
+        />
+        <meta name="twitter:creator" content="@Don_ugob" />
+      </head>
+
       <body className={`${inter.className} bg-white text-gray-900`}>
         <Header />
         <main className="min-h-screen">{children}</main>
