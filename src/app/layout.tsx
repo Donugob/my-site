@@ -34,7 +34,7 @@ export const metadata: Metadata = {
       "High-performance websites, modern UI/UX, and top-tier SEO. Build With Ugo.B delivers fast, scalable digital experiences.",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "${siteUrl}/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Build With Ugo.B — Web Development Agency",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     title: "Build With Ugo.B — Web Development Agency in Owerri",
     description:
       "Premium web development and SEO services in Nigeria. Let's build your digital success.",
-    images: ["/og-image.jpg"],
+    images: ["${siteUrl}/og-image.jpg"],
     creator: "@Don_ugob",
   },
   robots: {
