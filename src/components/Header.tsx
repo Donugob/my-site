@@ -34,9 +34,9 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0 group">
-            <h1 className="text-xl font-bold text-gray-900 tracking-tight transition-colors hover:text-blue-600">
+            <p className="text-xl font-bold text-gray-900 tracking-tight transition-colors hover:text-blue-600">
               Build With Ugo.B
-            </h1>
+            </p>
           </Link>
 
           {/* Desktop Navigation */}

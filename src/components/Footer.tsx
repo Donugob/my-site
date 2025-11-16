@@ -59,9 +59,9 @@ const Footer = () => {
         <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12">
           {/* Company Info - Spans 5 columns */}
           <div className="lg:col-span-5">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+            <p className="text-2xl font-bold text-gray-900 mb-4">
               Build With Ugo.B
-            </h3>
+            </p>
             <p className="text-gray-600 mb-6 max-w-md leading-relaxed">
               Engineering the future of the web, one pixel-perfect experience at
               a time. Based in Owerri, serving the world.
@@ -99,10 +99,10 @@ const Footer = () => {
               Services
             </h4>
             <ul className="space-y-3">
-              <FooterLink href="#services">Web Development</FooterLink>
-              <FooterLink href="#services">UI/UX Design</FooterLink>
-              <FooterLink href="#services">Mobile Apps</FooterLink>
-              <FooterLink href="#services">SEO & Analytics</FooterLink>
+              <li className="text-gray-600">Web Development</li>
+              <li className="text-gray-600">UI/UX Design</li>
+              <li className="text-gray-600">Mobile Apps</li>
+              <li className="text-gray-600">SEO & Analytics</li>
             </ul>
           </div>
 

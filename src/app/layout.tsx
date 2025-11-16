@@ -22,8 +22,20 @@ export const metadata: Metadata = {
     "Nigeria web design agency",
     "SEO services",
     "Build With Ugo.B",
+    "web development agency",
+    "web development agency Owerri",
+    "web development agency Imo State",
+    "Best web development agency in Nigeria",
+    "Best web development agency in Owerri",
+    "Best web development agency in Imo State",
     "website designer in Imo State",
     "full-stack developer Nigeria",
+    "fullstack developer Nigeria",
+    "fullstack developer Owerri",
+    "fullstack developer Imo State",
+    "website developer",
+    "website developer Owerri",
+    "website developer Imo State",
   ],
   openGraph: {
     type: "website",
@@ -91,11 +103,27 @@ export default function RootLayout({
           name="twitter:image"
           content="https://www.build-with-ugob.com.ng/og-image.jpg"
         />
-        <meta
-          name="twitter:image:alt"
-          content="Ugo.B Solutions"
-        />
+        <meta name="twitter:image:alt" content="Ugo.B Solutions" />
         <meta name="twitter:creator" content="@Don_ugob" />
+
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
       </head>
 
       <body className={`${inter.className} bg-white text-gray-900`}>

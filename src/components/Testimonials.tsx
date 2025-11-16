@@ -16,7 +16,7 @@ const testimonials: Testimonial[] = [
       "The technical prowess here is extraordinary. They tackled our complex needs with a brilliant strategy and flawless execution. We now have a platform that's both powerful and beautiful.",
     name: "Richard Emeka",
     title: "Owner, Richie's Pot",
-    image: "https://picsum.photos/seed/person2/100/100",
+    image: "https://i.postimg.cc/HxcgH86V/Portrait-Placeholder.png",
   },
   {
     quote:

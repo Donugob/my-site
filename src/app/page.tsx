@@ -9,11 +9,11 @@ import type { Metadata } from "next";
 import PortfolioHeading from "@/components/PortfolioHeading";
 
 export const metadata: Metadata = {
-  title: "Home",
+  title: "Homepage | Build With Ugo.B",
   description:
-    "Welcome to Build With Ugo.B — a modern web development agency helping brands build high-performance digital experiences with speed, creativity, and precision.",
+    "Build With Ugo.B, a modern web development agency helping brands build high-performance digital experiences with speed, creativity, and precision.",
   openGraph: {
-    title: "Build With Ugo.B — Web Development Agency",
+    title: "Homepage | Build With Ugo.B",
     url: "https://build-with-ugob.com.ng",
   },
 };
