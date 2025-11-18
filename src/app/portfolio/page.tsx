@@ -60,7 +60,7 @@ const PortfolioPage = () => {
                   ></path>
                 </svg>
                 <span className="font-medium text-gray-900">
-                  50+ Projects Completed
+                  25+ Projects Completed
                 </span>
               </div>
               <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-lg border border-gray-200">
