@@ -307,10 +307,10 @@ const Contact = () => {
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-1">Email</h4>
                   <a
-                    href="mailto:hello@buildwithugob.com"
+                    href="mailto:hello@build-with-ugob.com.ng"
                     className="text-gray-600 hover:text-blue-600 transition-colors"
                   >
-                    hello@buildwithugob.com
+                    hello@build-with-ugob.com.ng
                   </a>
                 </div>
               </div>

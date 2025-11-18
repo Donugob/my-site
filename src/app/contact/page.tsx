@@ -2,7 +2,6 @@ import React from "react";
 import Contact from "@/components/Contact";
 import type { Metadata } from "next";
 
-
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
@@ -195,7 +194,7 @@ const ContactPage = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="mailto:hello@buildwithugob.com"
+                href="mailto:hello@build-with-ugob.com.ng"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-gray-900 font-medium rounded-full hover:bg-gray-100 transition-all duration-300"
               >
                 Email Us
@@ -236,6 +235,67 @@ const ContactPage = () => {
           </div>
         </div>
       </section>
+
+      {/* FAQ Schema Markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "What's your typical project timeline?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Most projects take 6-12 weeks from kickoff to launch, depending on scope and complexity. We'll provide a detailed timeline during our initial consultation.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Do you work with startups?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Absolutely! We love working with startups and understand the unique challenges of building a product from scratch. We offer flexible packages tailored to startup budgets.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "What's included in your web development service?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Our full-stack service includes UI/UX design, front-end and back-end development, testing, deployment, and 30 days of post-launch support.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Can you help with an existing project?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Yes! We can audit, optimize, or add features to existing projects. We work with most modern tech stacks including React, Next.js, Node.js, and more.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "How do you handle project communication?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "We use Slack for daily communication and provide weekly progress updates via video call. You'll have a dedicated project manager as your main point of contact throughout the project.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "What payment terms do you offer?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "We typically work with a 50% deposit upfront and 50% upon project completion. For larger projects, we can discuss milestone-based payments.",
+                },
+              },
+            ],
+          }),
+        }}
+      />
     </div>
   );
 };

@@ -124,6 +124,26 @@ export default function RootLayout({
           href="/favicon-16x16.png"
         />
         <link rel="manifest" href="/site.webmanifest" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ProfessionalService",
+              name: "Build With Ugo.B",
+              url: "https://build-with-ugob.com.ng",
+              telephone: "+234-810-357-9586",
+              email: "hello@build-with-ugob.com.ng",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Owerri",
+                addressRegion: "IM",
+                addressCountry: "NG",
+              },
+              geo: { latitude: "5.4833", longitude: "6.9833" },
+            }),
+          }}
+        />
       </head>
 
       <body className={`${inter.className} bg-white text-gray-900`}>
