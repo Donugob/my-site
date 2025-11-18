@@ -37,6 +37,9 @@ export const metadata: Metadata = {
     "website developer Owerri",
     "website developer Imo State",
   ],
+  alternates: {
+    canonical: siteUrl,
+  },
   openGraph: {
     type: "website",
     url: siteUrl,
@@ -46,7 +49,7 @@ export const metadata: Metadata = {
       "High-performance websites, modern UI/UX, and top-tier SEO. Build With Ugo.B delivers fast, scalable digital experiences.",
     images: [
       {
-        url: "${siteUrl}/og-image.jpg",
+        url: `${siteUrl}/og-image.jpg`,
         width: 1200,
         height: 630,
         alt: "Build With Ugo.B — Web Development Agency",
@@ -58,7 +61,7 @@ export const metadata: Metadata = {
     title: "Build With Ugo.B — Web Development Agency in Owerri",
     description:
       "Premium web development and SEO services in Nigeria. Let's build your digital success.",
-    images: ["${siteUrl}/og-image.jpg"],
+    images: [`${siteUrl}/og-image.jpg`],
     creator: "@Don_ugob",
   },
   robots: {
@@ -84,7 +87,7 @@ export default function RootLayout({
       <head>
         <meta
           property="og:image"
-          content="https://www.build-with-ugob.com.ng/og-image.jpg"
+          content="https://build-with-ugob.com.ng/og-image.jpg"
         />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
@@ -101,7 +104,7 @@ export default function RootLayout({
         />
         <meta
           name="twitter:image"
-          content="https://www.build-with-ugob.com.ng/og-image.jpg"
+          content="https://build-with-ugob.com.ng/og-image.jpg"
         />
         <meta name="twitter:image:alt" content="Ugo.B Solutions" />
         <meta name="twitter:creator" content="@Don_ugob" />

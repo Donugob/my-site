@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   title: "Homepage | Build With Ugo.B",
   description:
     "Build With Ugo.B, a modern web development agency helping brands build high-performance digital experiences with speed, creativity, and precision.",
+  alternates: {
+    canonical: "https://build-with-ugob.com.ng",
+  },
   openGraph: {
     title: "Homepage | Build With Ugo.B",
     url: "https://build-with-ugob.com.ng",

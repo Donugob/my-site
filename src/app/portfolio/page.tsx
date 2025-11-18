@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Portfolio",
   description:
     "Explore the diverse portfolio of Build With Ugo.B, showcasing our expertise in creating high-performance, SEO-optimized websites that drive real business results.",
+  alternates: {
+    canonical: "https://build-with-ugob.com.ng/portfolio",
+  },
   openGraph: {
     title: "Portfolio of Build With Ugo.B",
     url: "https://build-with-ugob.com.ng/portfolio",

@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Contact Us",
   description:
     "Get in touch with Build With Ugo.B for inquiries, support, or to start your next project. We're here to help you build high-performance, SEO-optimized digital experiences.",
+  alternates: {
+    canonical: "https://build-with-ugob.com.ng/contact",
+  },
   openGraph: {
     title: "Contact Build With Ugo.B",
     url: "https://build-with-ugob.com.ng/contact",
