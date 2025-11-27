@@ -234,15 +234,15 @@ const PortfolioPage = () => {
                 {
                   quote:
                     "Build With Ugo.B transformed our outdated website into a modern, high-performing platform. Sales increased by 200% in the first quarter!",
-                  author: "Sarah Johnson",
-                  role: "CEO, TechCorp",
-                  avatar: "https://i.pravatar.cc/150?img=1",
+                  author: "Richard",
+                  role: "Richie's Pot",
+                  avatar: "https://i.postimg.cc/HxcgH86V/Portrait-Placeholder.png",
                 },
                 {
                   quote:
                     "The attention to detail and commitment to our vision was exceptional. They delivered ahead of schedule and exceeded all expectations.",
-                  author: "Michael Chen",
-                  role: "Founder, StartupXYZ",
+                  author: "Zane",
+                  role: "Event Manager, Votesphere",
                   avatar: "https://i.pravatar.cc/150?img=2",
                 },
               ].map((testimonial, idx) => (

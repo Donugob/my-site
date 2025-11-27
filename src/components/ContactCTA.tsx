@@ -179,7 +179,7 @@ const ContactCTA = () => {
                       ></path>
                     </svg>
                   </div>
-                  <div className="text-3xl font-bold text-white mb-2">50+</div>
+                  <div className="text-3xl font-bold text-white mb-2">25+</div>
                   <p className="text-sm text-gray-400">Successful Projects</p>
                 </div>
 

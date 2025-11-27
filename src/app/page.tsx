@@ -11,7 +11,7 @@ import PortfolioHeading from "@/components/PortfolioHeading";
 export const metadata: Metadata = {
   title: "Homepage | Build With Ugo.B",
   description:
-    "Build With Ugo.B, a modern web development agency helping brands build high-performance digital experiences with speed, creativity, and precision.",
+    "Build With Ugo.B, a modern web development agency based in Owerri, Imo State helping brands build high-performance digital experiences with speed, creativity, and precision.",
   alternates: {
     canonical: "https://build-with-ugob.com.ng",
   },
