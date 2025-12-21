@@ -199,7 +199,7 @@ const Portfolio = () => {
           Let’s build something great together.
         </p>
         <a
-          href="#contact"
+          href="/contact"
           className="inline-flex items-center gap-2 rounded-full bg-gray-900 px-7 py-3 font-medium text-white transition-all hover:bg-gray-800 hover:gap-3"
         >
           Get in Touch
