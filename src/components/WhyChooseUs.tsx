@@ -5,24 +5,20 @@ import { motion, easeOut } from "framer-motion";
 
 const points = [
   {
-    title: "Local Heart, Global Reach",
-    description:
-      "As an agnecy based in Owerri, we blend deep local understanding with world class development standards, ensuring your brand thrives anywhere.",
+    title: "Engineering Excellence",
+    description: "We don't just build websites; we engineer high-performance ecosystems with precision and scalability.",
   },
   {
-    title: "True Partnership",
-    description:
-      "We integrate with your team and your vision becomes our mission. Every project is a shared journey, not a transaction.",
-  },
-  {
-    title: "Timeless Technology",
-    description:
-      "We build with tomorrow in mind, the results are scalable, secure, and lightning fast. Your platform grows with your ambition.",
+    title: "Global Standards",
+    description: "Based in Owerri, operating on a global scale. We bring world-class development protocols to every project.",
   },
   {
     title: "Radical Transparency",
-    description:
-      "We believe in clear, honest communication, no hidden clauses, no smoke and mirrors. Just clarity and results.",
+    description: "Honest communication and clear technical roadmaps. No hidden complexity, just results.",
+  },
+  {
+    title: "Future-Proof Architecture",
+    description: "Using the cutting edge of tech—Next.js 16, AI integration, and Edge computing to keep you ahead.",
   },
 ];
 
@@ -39,12 +35,12 @@ const WhyChooseUs: React.FC = () => {
   return (
     <section
       id="about"
-      className="relative py-28 overflow-hidden bg-gradient-to-br from-white via-gray-50 to-blue-50"
+      className="relative py-32 overflow-hidden bg-brand-surface"
     >
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[90%] h-[500px] bg-gradient-to-b from-blue-100/60 to-transparent blur-3xl opacity-40 pointer-events-none" />
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-20 items-start">
+        <div className="grid lg:grid-cols-2 gap-24 items-center">
           {/* Left Content */}
           <motion.div
             initial="hidden"
@@ -52,60 +48,45 @@ const WhyChooseUs: React.FC = () => {
             viewport={{ once: true, margin: "-120px" }}
             className="max-w-2xl"
           >
+            <motion.div variants={fadeUp} className="inline-block px-4 py-1.5 bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-[0.2em] rounded-full mb-8">
+              Strategic Advantage
+            </motion.div>
+
             <motion.h2
               variants={fadeUp}
-              className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 font-display leading-tight"
+              className="text-5xl md:text-7xl font-display font-black text-white mb-8 italic uppercase tracking-tighter leading-[0.9]"
             >
-              More Than an Agency, <br />
-              <span className="bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 bg-clip-text text-transparent">
-                We’re Your Growth Partner.
-              </span>
+              Precision <br />
+              <span className="text-primary not-italic">Engineering</span>
             </motion.h2>
 
             <motion.p
               variants={fadeUp}
               custom={1}
-              className="text-gray-600 text-lg leading-relaxed mb-10"
+              className="text-gray-400 text-lg leading-relaxed mb-16 font-light max-w-lg"
             >
-              We build websites and digital futures. Our philosophy blends
-              collaboration, creativity, and precision to deliver experiences
-              that accelerate your growth.
+              We bridge the gap between complex engineering and intuitive design. Our philosophy is rooted in performance, security, and absolute clarity.
             </motion.p>
 
-            <div className="space-y-8">
+            <div className="space-y-12">
               {points.map((point, i) => (
                 <motion.div
                   key={i}
                   variants={fadeUp}
                   custom={i + 2}
-                  className="flex items-start"
+                  className="group flex items-start"
                 >
-                  {/* Number block - fixed width so it never overlaps text */}
-                  <div
-                    className="flex-none mr-6"
-                    aria-hidden
-                    style={{ width: "64px", minWidth: "64px" }}
-                  >
-                    <span
-                      className="block font-display font-extrabold leading-none tracking-tight text-gray-200 select-none"
-                      style={{
-                        // Responsive sizes
-                        fontSize: "clamp(1.25rem, 4vw, 2.5rem)",
-                        lineHeight: 1,
-                      }}
-                    >
-                      <span className="text-gray-300 block">
-                        0{String(i + 1).padStart(1, "0")}
-                      </span>
+                  <div className="mr-8 pt-1">
+                    <span className="text-2xl font-display font-black text-white/10 group-hover:text-primary/40 transition-colors italic">
+                      0{i + 1}
                     </span>
                   </div>
 
-                  {/* Content */}
-                  <div className="min-w-0 relative z-20">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-1">
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-white mb-3 uppercase tracking-tight italic">
                       {point.title}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-gray-500 leading-relaxed font-light">
                       {point.description}
                     </p>
                   </div>
@@ -116,41 +97,30 @@ const WhyChooseUs: React.FC = () => {
 
           {/* Right Content: image card */}
           <motion.div
-            initial={{ opacity: 0, x: 60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="relative flex items-center justify-center"
+            className="relative"
           >
-            <div className="relative w-full max-w-md lg:max-w-lg">
-              {/* Accent layer */}
-              <motion.div
-                initial={{ rotate: 8, y: 40, opacity: 0 }}
-                whileInView={{ rotate: 6, y: 0, opacity: 1 }}
-                transition={{ duration: 0.9, ease: "easeOut" }}
-                className="absolute -inset-2 rounded-3xl bg-gradient-to-br from-blue-500/8 via-indigo-400/6 to-transparent shadow-xl"
-                aria-hidden
-              />
-
-              {/* Image */}
-              <motion.img
+            <div className="relative aspect-[4/5] rounded-[40px] overflow-hidden border border-white/5 group">
+              <img
                 src="/ugob.webp"
                 alt="Ugo.B"
-                whileHover={{ scale: 1.02 }}
-                transition={{ type: "spring", stiffness: 120, damping: 12 }}
-                className="relative z-10 w-full rounded-3xl shadow-2xl object-cover border border-gray-100 h-[320px] md:h-[420px] lg:h-[520px]"
+                className="w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000"
               />
-
-              {/* Decorative floating shape */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.6, y: 40 }}
-                whileInView={{ opacity: 0.55, scale: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="absolute -top-6 -right-6 w-20 h-20 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 blur-xl"
-                aria-hidden
-              />
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-bg via-transparent to-transparent"></div>
+              
+              <div className="absolute bottom-10 left-10 right-10 p-8 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl">
+                <div className="text-[10px] font-black text-primary uppercase tracking-[0.3em] mb-2">Lead Engineer</div>
+                <div className="text-2xl font-display font-black text-white italic uppercase tracking-tighter">Ugochukwu B.</div>
+              </div>
             </div>
-          </motion.div>
+
+            {/* Decorative elements */}
+            <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary/10 rounded-full blur-[80px]"></div>
+            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-primary/5 rounded-full blur-[60px]"></div>
+          </div>
         </div>
       </div>
     </section>

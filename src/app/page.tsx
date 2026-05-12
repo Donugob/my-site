@@ -26,18 +26,21 @@ const App: React.FC = () => {
     <div className="bg-brand-bg text-brand-text font-sans antialiased selection:bg-primary/20 selection:text-primary overflow-x-hidden">
       <main>
         <Hero />
-        <section id="services" className="py-24 bg-gray-50">
-          <div className="container mx-auto px-6 lg:px-8">
-            <div className="w-full mb-16 text-center">
-              <div className="inline-block px-3 py-1 bg-blue-100 text-blue-700 text-xs font-medium rounded-full mb-4">
-                What We Do
+        <section id="services" className="py-24 bg-brand-surface relative overflow-hidden">
+          {/* Background decoration */}
+          <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2"></div>
+          
+          <div className="container mx-auto px-6 lg:px-8 relative z-10">
+            <div className="w-full mb-20 text-center">
+              <div className="inline-block px-4 py-1.5 bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-[0.2em] rounded-full mb-6">
+                Core Expertise
               </div>
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-                Services Built for Growth
+              <h2 className="text-5xl lg:text-6xl font-display font-black text-white mb-6 italic uppercase tracking-tighter">
+                Services <br />
+                <span className="text-primary not-italic">Engineered</span> For Scale
               </h2>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                From concept to launch and beyond, we provide everything you
-                need to build a successful digital presence.
+              <p className="text-lg text-gray-400 leading-relaxed max-w-2xl mx-auto font-light">
+                We bridge the gap between complex engineering and intuitive design to build products that dominate markets.
               </p>
             </div>
 

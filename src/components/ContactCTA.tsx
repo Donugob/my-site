@@ -1,13 +1,11 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-import Link from "next/link";
+import { motion } from "framer-motion";
 
 const ContactCTA = () => {
   const [hasAnimated, setHasAnimated] = useState(false);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const sectionRef = useRef<HTMLElement>(null);
-  const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -26,276 +24,117 @@ const ContactCTA = () => {
     return () => observer.disconnect();
   }, [hasAnimated]);
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!cardRef.current) return;
-    const rect = cardRef.current.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width) * 100;
-    const y = ((e.clientY - rect.top) / rect.height) * 100;
-    setMousePosition({ x, y });
-  };
+  const whatsappUrl = "https://wa.me/2348103579586?text=Hi%20Ugo,%20I'd%20like%20to%20discuss%20a%20project.";
 
   return (
     <section
       ref={sectionRef}
       id="contact"
-      className="py-24 bg-white relative overflow-hidden"
+      className="py-32 bg-brand-bg relative overflow-hidden"
     >
-      {/* Subtle background pattern */}
-      <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-30"></div>
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
 
       <div className="container mx-auto px-6 lg:px-8 relative z-10">
         <div className="max-w-6xl mx-auto">
-          {/* Main Card */}
-          <div
-            ref={cardRef}
-            onMouseMove={handleMouseMove}
-            className="relative bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800 rounded-3xl p-12 lg:p-16 overflow-hidden group"
-            style={{
-              opacity: hasAnimated ? 1 : 0,
-              transform: hasAnimated ? "translateY(0)" : "translateY(40px)",
-              transition: "all 0.8s ease",
-            }}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="relative bg-brand-surface rounded-[40px] p-12 lg:p-24 border border-white/5 overflow-hidden group"
           >
-            {/* Animated gradient overlay following mouse */}
-            <div
-              className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
-              style={{
-                background: `radial-gradient(600px circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(59, 130, 246, 0.1), transparent 40%)`,
-              }}
-            ></div>
+            {/* Background elements */}
+            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px] translate-x-1/4 -translate-y-1/4"></div>
+            <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-primary/5 rounded-full blur-[80px] -translate-x-1/4 translate-y-1/4"></div>
 
-            {/* Decorative elements */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-blue-600/5 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-600/5 rounded-full blur-3xl"></div>
-
-            {/* Grid pattern overlay */}
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-
-            <div className="relative z-10">
-              {/* Top Section */}
-              <div className="text-center mb-12">
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full mb-8">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
-                  <span className="text-sm text-blue-400 font-medium">
-                    Available for New Projects
-                  </span>
-                </div>
-
-                <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 leading-tight">
-                  Ready to Start
-                  <br />
-                  Something Amazing?
-                </h2>
-
-                <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
-                  Let's transform your vision into a digital experience that
-                  drives results. We typically respond within 24 hours.
-                </p>
+            <div className="relative z-10 flex flex-col items-center text-center">
+              <div className="inline-flex items-center gap-3 px-5 py-2 bg-primary/10 border border-primary/20 rounded-full mb-10">
+                <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+                <span className="text-[10px] uppercase tracking-[0.2em] font-black text-primary">
+                  Systems Online
+                </span>
               </div>
 
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-                <Link
-                  href="/contact"
-                  className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-gray-900 font-semibold rounded-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20 hover:scale-105"
-                >
-                  <span className="relative z-10 flex items-center gap-2">
-                    Get Started
-                    <svg
-                      className="w-5 h-5 transition-transform group-hover:translate-x-1"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M17 8l4 4m0 0l-4 4m4-4H3"
-                      ></path>
-                    </svg>
-                  </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </Link>
+              <h2 className="text-6xl lg:text-8xl font-display font-black text-white mb-8 italic uppercase tracking-tighter leading-[0.9]">
+                Initiate <br />
+                <span className="text-primary not-italic">Connection</span>
+              </h2>
 
+              <p className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed font-light mb-16">
+                Direct access to our engineering team. We prioritize WhatsApp for rapid synchronization and decision making.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-6 w-full max-w-lg justify-center">
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 inline-flex items-center justify-center gap-4 px-10 py-6 bg-primary text-black font-black uppercase tracking-widest text-sm rounded-2xl hover:bg-white transition-all duration-300 hover:shadow-[0_0_40px_rgba(0,209,255,0.4)] group"
+                >
+                  WhatsApp
+                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
+                    <path d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </a>
+                
                 <a
                   href="mailto:hello@build-with-ugob.com.ng"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/5 backdrop-blur-sm border border-white/10 text-white font-semibold rounded-xl hover:bg-white/10 hover:border-white/20 transition-all duration-300"
+                  className="flex-1 inline-flex items-center justify-center gap-4 px-10 py-6 bg-white/5 backdrop-blur-sm border border-white/10 text-white font-black uppercase tracking-widest text-sm rounded-2xl hover:bg-white/10 hover:border-white/20 transition-all duration-300"
                 >
-                  Email Us
-                  <svg
-                    className="w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                    ></path>
-                  </svg>
+                  Email Protocol
                 </a>
               </div>
 
-              {/* Stats Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-12 border-t border-white/10">
-                <div className="text-center group">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-500/10 rounded-2xl mb-4 group-hover:bg-blue-500/20 transition-colors">
-                    <svg
-                      className="w-8 h-8 text-blue-400"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M13 10V3L4 14h7v7l9-11h-7z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div className="text-3xl font-bold text-white mb-2">
-                    24 Hours
-                  </div>
-                  <p className="text-sm text-gray-400">Average Response Time</p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-24 w-full pt-16 border-t border-white/5">
+                <div>
+                  <div className="text-sm font-black text-white uppercase tracking-widest mb-2 italic">Sync Rate</div>
+                  <div className="text-2xl font-display font-black text-primary tracking-tighter">&lt; 120 MINS</div>
+                  <p className="text-[10px] text-gray-500 uppercase tracking-widest mt-1 font-bold">Avg. Response Time</p>
                 </div>
-
-                <div className="text-center group">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-500/10 rounded-2xl mb-4 group-hover:bg-blue-500/20 transition-colors">
-                    <svg
-                      className="w-8 h-8 text-blue-400"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div className="text-3xl font-bold text-white mb-2">25+</div>
-                  <p className="text-sm text-gray-400">Successful Projects</p>
+                <div>
+                  <div className="text-sm font-black text-white uppercase tracking-widest mb-2 italic">Availability</div>
+                  <div className="text-2xl font-display font-black text-primary tracking-tighter">GLOBAL</div>
+                  <p className="text-[10px] text-gray-500 uppercase tracking-widest mt-1 font-bold">24/7 Operations</p>
                 </div>
-
-                <div className="text-center group">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-500/10 rounded-2xl mb-4 group-hover:bg-blue-500/20 transition-colors">
-                    <svg
-                      className="w-8 h-8 text-blue-400"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div className="text-3xl font-bold text-white mb-2">100%</div>
-                  <p className="text-sm text-gray-400">Client Satisfaction</p>
+                <div>
+                  <div className="text-sm font-black text-white uppercase tracking-widest mb-2 italic">Security</div>
+                  <div className="text-2xl font-display font-black text-primary tracking-tighter">ENCRYPTED</div>
+                  <p className="text-[10px] text-gray-500 uppercase tracking-widest mt-1 font-bold">End-to-End Comms</p>
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          {/* Bottom Contact Info Cards */}
-          <div
-            className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8"
-            style={{
-              opacity: hasAnimated ? 1 : 0,
-              transform: hasAnimated ? "translateY(0)" : "translateY(20px)",
-              transition: "all 0.8s ease 0.3s",
-            }}
-          >
-            <a
-              href="mailto:hello@build-with-ugob.com.ng"
-              className="group flex items-center gap-4 p-6 bg-white rounded-2xl border border-gray-200 hover:border-blue-600 hover:shadow-lg transition-all duration-300"
-            >
-              <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-blue-600 transition-colors">
-                <svg
-                  className="w-6 h-6 text-blue-600 group-hover:text-white transition-colors"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                  ></path>
-                </svg>
-              </div>
-              <div>
-                <div className="text-sm text-gray-600 mb-1">Email</div>
-                <div className="font-semibold text-gray-900 text-sm">
-                  hello@build-with-ugob.com.ng
-                </div>
-              </div>
-            </a>
-
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
             <a
               href="tel:+2348103579586"
-              className="group flex items-center gap-4 p-6 bg-white rounded-2xl border border-gray-200 hover:border-blue-600 hover:shadow-lg transition-all duration-300"
+              className="group flex items-center justify-between p-8 bg-brand-surface rounded-[30px] border border-white/5 hover:border-primary/20 transition-all duration-300"
             >
-              <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-blue-600 transition-colors">
-                <svg
-                  className="w-6 h-6 text-blue-600 group-hover:text-white transition-colors"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                  ></path>
-                </svg>
-              </div>
-              <div>
-                <div className="text-sm text-gray-600 mb-1">Phone</div>
-                <div className="font-semibold text-gray-900 text-sm">
-                  +234 810 357 9586
+              <div className="flex items-center gap-6">
+                <div className="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center group-hover:bg-primary transition-colors">
+                  <svg className="w-6 h-6 text-primary group-hover:text-black transition-colors" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-widest text-gray-500 font-black mb-1">Direct Line</div>
+                  <div className="text-white font-bold tracking-tight">+234 810 357 9586</div>
                 </div>
               </div>
+              <svg className="w-5 h-5 text-gray-700 group-hover:text-primary transition-colors" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
+                <path d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
             </a>
 
-            <div className="group flex items-center gap-4 p-6 bg-white rounded-2xl border border-gray-200 hover:border-blue-600 hover:shadow-lg transition-all duration-300">
-              <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-blue-600 transition-colors">
-                <svg
-                  className="w-6 h-6 text-blue-600 group-hover:text-white transition-colors"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                  ></path>
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                  ></path>
+            <div className="group flex items-center gap-6 p-8 bg-brand-surface rounded-[30px] border border-white/5">
+              <div className="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center">
+                <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
               </div>
               <div>
-                <div className="text-sm text-gray-600 mb-1">Location</div>
-                <div className="font-semibold text-gray-900 text-sm">
-                  Owerri, Nigeria
-                </div>
+                <div className="text-[10px] uppercase tracking-widest text-gray-500 font-black mb-1">Headquarters</div>
+                <div className="text-white font-bold tracking-tight">Owerri, Nigeria</div>
               </div>
             </div>
           </div>

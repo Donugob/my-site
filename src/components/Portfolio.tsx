@@ -18,39 +18,34 @@ const projects: Project[] = [
   {
     image: "/lawsanse.webp",
     title: "LAWSAN SE",
-    description:
-      "Official website of The Law Students' Association of Nigeria, South East Zone.",
-    tags: ["PHP", "Paystack", "Bootstrap"],
+    description: "Official ecosystem for The Law Students' Association of Nigeria, South East Zone.",
+    tags: ["Systems Architecture", "Paystack", "UX Engineering"],
     size: "large",
-    metrics: { duration: "2 months", impact: "300% student participation" },
+    metrics: { duration: "Q3 2025", impact: "300% Engagement" },
   },
   {
     image: "/jurismemo.webp",
     title: "JURISMEMO",
-    description: "Legal resources tool for Nigerian Lawyers and Law students.",
-    tags: ["AI", "Ajax", "PHP"],
+    description: "AI-powered legal intelligence platform for Nigerian legal professionals.",
+    tags: ["Neural Networks", "Next.js", "Intelligence"],
     size: "large",
-    metrics: {
-      duration: "24 months+",
-      impact: "improved legal research by students",
-    },
+    metrics: { duration: "Continuous", impact: "Research Accel" },
   },
   {
     image: "/richiespot.webp",
     title: "Richie's Pot",
-    description: "An E-commerce Web App for a Nigerian Restaurant.",
-    tags: ["React", "Node Js", "E-commerce"],
+    description: "High-conversion E-commerce infrastructure for modern gastronomy.",
+    tags: ["Direct-to-Consumer", "Node.js", "Scale"],
     size: "medium",
-    metrics: { duration: "4 weeks", impact: "300% sales" },
+    metrics: { duration: "4 Weeks", impact: "3x Sales" },
   },
   {
     image: "/lss.webp",
     title: "LSS UNILAWRIN",
-    description:
-      "Official website for Law Students' Society University of Illorin.",
-    tags: ["React", "Node JS", "Mongo DB"],
+    description: "Institutional digital portal for Law Students' Society University of Ilorin.",
+    tags: ["Infrastructure", "Availability", "UX"],
     size: "medium",
-    metrics: { duration: "2 weeks", impact: "99.9% uptime" },
+    metrics: { duration: "2 Weeks", impact: "99.9% SLI" },
   },
 ];
 
@@ -65,101 +60,52 @@ const PortfolioCard = ({
   const ref = React.useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-60px" });
 
-  const sizeMap = {
-    large: "md:col-span-2 md:row-span-2",
-    medium: "md:col-span-1 md:row-span-2",
-    small: "md:col-span-1 md:row-span-1",
-  };
-
   return (
     <motion.article
       ref={ref}
-      className={`
-        group flex flex-col overflow-hidden rounded-2xl bg-white shadow-md
-        transition-all duration-300 hover:shadow-lg
-        ${sizeMap[project.size]}
-      `}
+      className="group relative flex flex-col overflow-hidden rounded-3xl bg-[#0A0A0B] border border-white/5 transition-all duration-500 hover:border-primary/20 hover:shadow-2xl"
       initial={{ opacity: 0, y: 30 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.5, delay: index * 0.08 }}
+      transition={{ duration: 0.8, delay: index * 0.1 }}
     >
-      {/* Image – full width, fixed aspect */}
-      <div className="aspect-video overflow-hidden bg-gray-100">
+      <div className="aspect-[16/10] overflow-hidden bg-[#050505]">
         <img
           src={project.image}
           alt={project.title}
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-70 group-hover:opacity-100"
           loading="lazy"
         />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0B] via-transparent to-transparent opacity-60"></div>
       </div>
 
-      {/* Content – below image on mobile, overlay on hover for desktop */}
-      <div className="flex flex-1 flex-col justify-between p-5 md:p-6">
-        {/* Tags */}
-        <div className="mb-3 flex flex-wrap gap-2">
+      <div className="flex flex-1 flex-col p-8">
+        <div className="mb-4 flex flex-wrap gap-2">
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-700"
+              className="text-[10px] uppercase tracking-widest font-black text-primary/60"
             >
-              {tag}
+              // {tag}
             </span>
           ))}
         </div>
 
-        {/* Title */}
-        <h3 className="mb-2 text-lg font-bold text-gray-900 md:text-xl">
+        <h3 className="mb-3 text-2xl font-display font-black text-white italic uppercase tracking-tighter group-hover:text-primary transition-colors">
           {project.title}
         </h3>
 
-        {/* Description – truncated on mobile */}
-        <p className="mb-4 text-sm text-gray-600 line-clamp-2 md:line-clamp-3">
+        <p className="mb-8 text-sm text-gray-400 font-light leading-relaxed line-clamp-2">
           {project.description}
         </p>
 
-        {/* Metrics */}
-        <div className="flex flex-wrap gap-4 text-xs text-gray-500">
-          <div className="flex items-center gap-1">
-            <span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-                className="h-4 w-4"
-              >
-                <circle cx="12" cy="12" r="10" />
-                <path d="M12 6v6l4 2" />
-              </svg>
-            </span>{" "}
-            {project.metrics.duration}
+        <div className="flex justify-between items-center mt-auto pt-6 border-t border-white/5">
+          <div className="flex flex-col">
+            <span className="text-[10px] uppercase tracking-widest text-gray-600 font-bold">Timeline</span>
+            <span className="text-xs text-white font-medium">{project.metrics.duration}</span>
           </div>
-          <div className="flex items-center gap-1">
-            <span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-                className="h-4 w-4"
-              >
-                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
-                <polyline points="17 6 23 6 23 12" />
-              </svg>
-            </span>{" "}
-            {project.metrics.impact}
+          <div className="flex flex-col text-right">
+            <span className="text-[10px] uppercase tracking-widest text-gray-600 font-bold">Outcome</span>
+            <span className="text-xs text-primary font-medium">{project.metrics.impact}</span>
           </div>
         </div>
       </div>
@@ -170,54 +116,33 @@ const PortfolioCard = ({
 /* -------------------------- section -------------------------- */
 const Portfolio = () => {
   return (
-    <div className="container mx-auto px-5 md:px-6 lg:px-8">
-      {/* Mobile-first grid */}
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4 auto-rows-auto">
+    <div className="container mx-auto px-6 lg:px-8 bg-brand-bg pb-32">
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
         {projects.map((p, i) => (
-          <div
-            key={i}
-            className={`
-                ${p.size === "large" && "md:col-span-2 md:row-span-2"}
-                ${p.size === "medium" && "md:col-span-1 md:row-span-2"}
-                ${p.size === "small" && "md:col-span-1 md:row-span-1"}
-              `}
-          >
-            <PortfolioCard project={p} index={i} />
-          </div>
+          <PortfolioCard key={i} project={p} index={i} />
         ))}
       </div>
 
-      {/* CTA */}
       <motion.div
-        className="mt-16 text-center md:mt-20"
+        className="mt-32 text-center"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <p className="mb-5 text-lg text-gray-700 md:text-xl">
-          Let’s build something great together.
+        <p className="mb-8 text-gray-500 font-light italic">
+          Looking for a partner to architect your next system?
         </p>
         <a
-          href="#contact"
-          className="inline-flex items-center gap-2 rounded-full bg-gray-900 px-7 py-3 font-medium text-white transition-all hover:bg-gray-800 hover:gap-3"
+          href="https://wa.me/2348103579586"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-4 px-10 py-5 text-sm font-bold uppercase tracking-[0.2em] text-black bg-white rounded-2xl hover:bg-primary transition-all duration-300 group"
         >
-          Get in Touch
-          <span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M5 12h14" />
-              <path d="M13 6l6 6-6 6" />
-            </svg>
-          </span>
+          Initialize Chat
+          <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
         </a>
       </motion.div>
     </div>
