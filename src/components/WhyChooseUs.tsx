@@ -120,7 +120,7 @@ const WhyChooseUs: React.FC = () => {
             {/* Decorative elements */}
             <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary/10 rounded-full blur-[80px]"></div>
             <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-primary/5 rounded-full blur-[60px]"></div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
