@@ -79,7 +79,7 @@ const AboutContent = () => {
               </p>
               <div className="space-y-6">
                 <p className="text-gray-400 font-light leading-relaxed">
-                  I am <span className="text-white font-bold italic">Ugochukwu B.</span> — a Lead Engineer who balances the rigid structure of Law with the fluid creativity of Digital Engineering. 
+                  I am <span className="text-white font-bold italic">Ugo B.</span> — a Lead Engineer who balances the rigid structure of Law with the fluid creativity of Digital Engineering. 
                 </p>
                 <p className="text-gray-400 font-light leading-relaxed">
                   Based in Owerri, operating globally. My mission is to elevate brands through high-performance digital ecosystems that are as secure as they are immersive.

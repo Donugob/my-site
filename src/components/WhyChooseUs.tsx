@@ -113,7 +113,7 @@ const WhyChooseUs: React.FC = () => {
               
               <div className="absolute bottom-10 left-10 right-10 p-8 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl">
                 <div className="text-[10px] font-black text-primary uppercase tracking-[0.3em] mb-2">Lead Engineer</div>
-                <div className="text-2xl font-display font-black text-white italic uppercase tracking-tighter">Ugochukwu B.</div>
+                <div className="text-2xl font-display font-black text-white italic uppercase tracking-tighter">Ugo B.</div>
               </div>
             </div>
 
