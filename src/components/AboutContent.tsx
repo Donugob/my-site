@@ -14,42 +14,42 @@ const AboutContent = () => {
   const timeline = [
     {
       year: "2019",
-      title: "Initial Genesis",
-      description: "Deployed the first static architecture. A fascination with digital engineering was born.",
+      title: "The Beginning",
+      description: "Started my journey in web development, focusing on clean code and performance.",
     },
     {
       year: "2021",
-      title: "Binary Duality",
-      description: "Synthesizing legal intelligence with full-stack execution. Developing high-complexity systems for initial clients.",
+      title: "Full-Stack Development",
+      description: "Mastered high-performance stacks and began building complex systems for global clients.",
     },
     {
       year: "2022",
-      title: "The Jurismemo Protocol",
-      description: "Engineered and launched Jurismemo, a mission-critical legal research ecosystem for Nigerian law students.",
+      title: "Jurismemo Launch",
+      description: "Launched Jurismemo, a comprehensive legal research platform for law students in Nigeria.",
     },
     {
       year: "2026",
-      title: "UGO.B PRECISION",
-      description: "Establishing a premier digital engineering agency dedicated to high-performance assets and immersive UX.",
+      title: "UGO.B ENGINEERING",
+      description: "Founded a premier digital engineering agency focused on high-quality web products.",
     },
   ];
 
   const values = [
     {
-      title: "Extreme Precision",
-      description: "We operate at the pixel level. Every component is engineered for absolute performance.",
+      title: "Attention to Detail",
+      description: "We focus on every pixel and line of code to ensure your product is perfect.",
     },
     {
-      title: "Strategic Intelligence",
-      description: "Logic-driven design. We build systems that don't just look good, but function flawlessly.",
+      title: "User-Centered Strategy",
+      description: "We build systems that are intuitive, easy to use, and designed for results.",
     },
     {
-      title: "Technological Edge",
-      description: "Constant iteration on the latest protocols. We live at the frontier of the web.",
+      title: "Modern Technology",
+      description: "We use the latest tools and frameworks to build fast, secure, and future-proof apps.",
     },
     {
-      title: "Unwavering Integrity",
-      description: "Absolute transparency in our engineering roadmaps and client partnerships.",
+      title: "Clear Communication",
+      description: "We maintain full transparency throughout the project to ensure we meet your goals.",
     },
   ];
 
@@ -140,7 +140,7 @@ const AboutContent = () => {
                 Operating Principles
               </div>
               <h2 className="text-5xl lg:text-6xl font-display font-medium text-white tracking-tighter mb-4">
-                Core <span className="text-primary italic">Protocols</span>
+                Our <span className="text-primary italic">Values</span>
               </h2>
             </div>
 
@@ -184,8 +184,8 @@ const AboutContent = () => {
         <div className="container mx-auto px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-6xl lg:text-9xl font-display font-medium text-white tracking-tighter leading-[0.85] mb-12">
-              Start Your <br />
-              <span className="text-primary italic">Expedition.</span>
+              Let's Build <br />
+              <span className="text-primary italic">Together.</span>
             </h2>
             <p className="text-xl text-gray-400 max-w-xl mx-auto leading-relaxed font-light mb-16">
               Establish a direct line of communication with the architect for your next high-performance project.

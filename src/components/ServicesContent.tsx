@@ -15,28 +15,28 @@ const ServicesContent = () => {
   const process = [
     {
       number: "01",
-      title: "Archetype Discovery",
-      description: "We deep-dive into your ecosystem to identify core requirements and user behaviors.",
+      title: "Discovery & Research",
+      description: "We start by understanding your business goals and user needs.",
     },
     {
       number: "02",
-      title: "Strategic Blueprint",
-      description: "Architecting the technical roadmap and UI/UX narrative for maximum impact.",
+      title: "Planning & Strategy",
+      description: "We create a technical roadmap and design a user experience that delivers results.",
     },
     {
       number: "03",
-      title: "Precision Engineering",
-      description: "Bespoke development using the cutting edge of full-stack engineering protocols.",
+      title: "Development",
+      description: "We build your product using modern, high-performance technology.",
     },
     {
       number: "04",
-      title: "Stress Testing",
-      description: "Rigorous optimization for performance, security, and cross-platform reliability.",
+      title: "Testing & Quality",
+      description: "We rigorously test for performance, security, and reliability.",
     },
     {
       number: "05",
-      title: "Deployment & Scaling",
-      description: "Launching into production with ongoing intelligence and infrastructure support.",
+      title: "Launch & Support",
+      description: "We deploy your product and provide ongoing support to help you scale.",
     },
   ];
 
@@ -68,11 +68,11 @@ const ServicesContent = () => {
             transition={{ duration: 0.8 }}
           >
             <div className="inline-block px-4 py-1.5 bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-[0.2em] rounded-full mb-8">
-              Capabilities Manifest
+              Our Expertise
             </div>
             <h1 className="text-6xl lg:text-8xl font-display font-medium text-white mb-8 tracking-tighter leading-[0.9]">
-              Engineered <br />
-              <span className="text-primary italic">Dominance</span>
+              What We <br />
+              <span className="text-primary italic">Offer</span>
             </h1>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed font-light mb-16">
               We architect high-availability digital assets designed for performance, immersion, and conversion.
@@ -110,11 +110,11 @@ const ServicesContent = () => {
             <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
               <div className="max-w-xl">
                 <h2 className="text-5xl lg:text-6xl font-display font-medium text-white tracking-tighter leading-[0.9] mb-6">
-                  Execution <span className="text-primary italic">Protocol</span>
+                  Our <span className="text-primary italic">Process</span>
                 </h2>
                 <p className="text-gray-400 font-light">A systematic approach to engineering excellence and transparent project lifecycle management.</p>
               </div>
-              <div className="text-[10px] text-gray-500 font-black uppercase tracking-[0.3em] pb-2">Verified Methodology // 2026</div>
+              <div className="text-[10px] text-gray-500 font-black uppercase tracking-[0.3em] pb-2">Our Methodology // 2026</div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
@@ -141,7 +141,7 @@ const ServicesContent = () => {
         <div className="container mx-auto px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-20">
-              <h2 className="text-4xl lg:text-5xl font-display font-medium text-white tracking-tighter mb-6">Intelligence <span className="text-primary italic">Gathering</span></h2>
+              <h2 className="text-4xl lg:text-5xl font-display font-medium text-white tracking-tighter mb-6">Common <span className="text-primary italic">Questions</span></h2>
               <p className="text-gray-500 font-light">Commonly queried protocols regarding our engineering services.</p>
             </div>
 
@@ -171,8 +171,8 @@ const ServicesContent = () => {
              <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px]"></div>
              
              <h2 className="text-5xl lg:text-7xl font-display font-medium text-white tracking-tighter leading-[0.85] mb-8 relative z-10">
-              Initialize <br />
-              <span className="text-primary italic">Deployment</span>
+              Ready to <br />
+              <span className="text-primary italic">Start?</span>
             </h2>
             <p className="text-xl text-gray-400 max-w-xl mx-auto leading-relaxed font-light mb-12 relative z-10">
               Coordinate with our engineering team for immediate project scoping and architectural review.

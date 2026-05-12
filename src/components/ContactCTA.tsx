@@ -50,17 +50,17 @@ const ContactCTA = () => {
               <div className="inline-flex items-center gap-3 px-5 py-2 bg-primary/10 border border-primary/20 rounded-full mb-10">
                 <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
                 <span className="text-[10px] uppercase tracking-[0.2em] font-black text-primary">
-                  Systems Online
+                  Available for Projects
                 </span>
               </div>
 
               <h2 className="text-6xl lg:text-9xl font-display font-medium text-white mb-8 tracking-tighter leading-[0.85]">
-                Design Your <br />
-                <span className="text-primary italic">Legacy</span>
+                Get a <br />
+                <span className="text-primary italic">Quote</span>
               </h2>
 
               <p className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed font-light mb-16">
-                Direct access to our engineering team. We prioritize clarity, precision, and high-performance collaboration.
+                Talk to us about your project. We respond to all inquiries within 2 hours.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-6 w-full max-w-lg justify-center">
@@ -78,25 +78,25 @@ const ContactCTA = () => {
                   href="mailto:hello@build-with-ugob.com.ng"
                   className="flex-1 inline-flex items-center justify-center gap-4 px-10 py-6 bg-white/5 backdrop-blur-sm border border-white/10 text-white font-bold uppercase tracking-widest text-sm rounded-2xl hover:bg-white/10 hover:border-white/20 transition-all duration-300"
                 >
-                  Email Briefing
+                  Send Email
                 </a>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-24 w-full pt-16 border-t border-white/5">
                 <div>
-                  <div className="text-sm font-black text-white uppercase tracking-widest mb-2 italic">Sync Rate</div>
-                  <div className="text-2xl font-display font-black text-primary tracking-tighter">&lt; 120 MINS</div>
-                  <p className="text-[10px] text-gray-500 uppercase tracking-widest mt-1 font-bold">Avg. Response Time</p>
+                  <div className="text-sm font-black text-white uppercase tracking-widest mb-2">Response Time</div>
+                  <div className="text-2xl font-display font-black text-primary tracking-tighter">&lt; 2 HOURS</div>
+                  <p className="text-[10px] text-gray-500 uppercase tracking-widest mt-1 font-bold">Fast Turnaround</p>
                 </div>
                 <div>
-                  <div className="text-sm font-black text-white uppercase tracking-widest mb-2 italic">Availability</div>
+                  <div className="text-sm font-black text-white uppercase tracking-widest mb-2">Availability</div>
                   <div className="text-2xl font-display font-black text-primary tracking-tighter">GLOBAL</div>
-                  <p className="text-[10px] text-gray-500 uppercase tracking-widest mt-1 font-bold">24/7 Operations</p>
+                  <p className="text-[10px] text-gray-500 uppercase tracking-widest mt-1 font-bold">Remote Ready</p>
                 </div>
                 <div>
-                  <div className="text-sm font-black text-white uppercase tracking-widest mb-2 italic">Security</div>
-                  <div className="text-2xl font-display font-black text-primary tracking-tighter">ENCRYPTED</div>
-                  <p className="text-[10px] text-gray-500 uppercase tracking-widest mt-1 font-bold">End-to-End Comms</p>
+                  <div className="text-sm font-black text-white uppercase tracking-widest mb-2">Support</div>
+                  <div className="text-2xl font-display font-black text-primary tracking-tighter">24/7</div>
+                  <p className="text-[10px] text-gray-500 uppercase tracking-widest mt-1 font-bold">Always Connected</p>
                 </div>
               </div>
             </div>

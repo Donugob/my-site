@@ -101,17 +101,17 @@ const Hero = () => {
           >
             <div className="inline-flex items-center gap-3 px-4 py-2 bg-white/5 border border-white/10 rounded-full text-[10px] uppercase tracking-[0.3em] font-medium text-primary mb-10">
               <span className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse"></span>
-              Pioneering Digital Architecture
+              High-Performance Web Development
             </div>
 
             <h1 className="text-6xl lg:text-8xl xl:text-9xl font-display font-medium text-white leading-[0.85] tracking-tighter mb-10">
               Building <br />
-              <span className="text-primary italic">Beyond</span> <br />
-              Digital.
+              <span className="text-primary italic">Scalable</span> <br />
+              Products.
             </h1>
 
             <p className="text-lg lg:text-xl text-gray-400 leading-relaxed mb-12 max-w-xl font-light">
-              We engineer high-performance digital ecosystems that redefine industries. Precision engineering meets uncompromising design.
+              We build fast, reliable, and beautiful web applications designed to help your business grow and scale.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-5">

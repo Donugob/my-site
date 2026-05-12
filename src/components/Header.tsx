@@ -39,10 +39,16 @@ const Header = () => {
       <div className="container mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-14">
           {/* Logo */}
-          <Link href="/" className="flex-shrink-0 group">
-            <span className="text-xl font-display font-bold text-white tracking-tighter flex items-center gap-2">
-              <span className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-black font-black">B</span>
-              BUILD WITH UGO.B
+          <Link href="/" className="flex-shrink-0 group flex items-center gap-4">
+            <div className="relative w-10 h-10 flex items-center justify-center">
+              <svg className="w-full h-full text-primary" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M30 20H55C65 20 72 27 72 37C72 44.5 68 50 62 52.5C70 55.5 75 62.5 75 71C75 81.5 67 90 56 90H30V20Z" stroke="currentColor" strokeWidth="8" strokeLinecap="square"/>
+                <path d="M30 55H58" stroke="currentColor" strokeWidth="8" strokeLinecap="square"/>
+                <rect x="5" y="5" width="90" height="90" stroke="currentColor" strokeWidth="1" strokeDasharray="4 4" opacity="0.3" />
+              </svg>
+            </div>
+            <span className="text-lg font-display font-medium text-white tracking-[0.2em] uppercase">
+              Ugo.B <span className="text-gray-500 font-light ml-2 border-l border-white/10 pl-3 hidden sm:inline">Engineering</span>
             </span>
           </Link>
 

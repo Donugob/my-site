@@ -32,7 +32,7 @@ const Footer = () => {
             </p>
 
             <div className="mt-10">
-              <h4 className="text-[10px] font-black text-white uppercase tracking-[0.2em] mb-4 italic">Intelligence Stream</h4>
+              <h4 className="text-[10px] font-black text-white uppercase tracking-[0.2em] mb-4">Join Our Newsletter</h4>
               <div className="flex gap-3 max-w-sm">
                 <input
                   type="email"
@@ -45,24 +45,24 @@ const Footer = () => {
                   onClick={handleSubscribe}
                   className="px-6 py-3.5 bg-white text-black text-[10px] font-black uppercase tracking-widest rounded-xl hover:bg-primary transition-colors whitespace-nowrap"
                 >
-                  {isSubscribed ? "✓ SYNCED" : "INITIALIZE"}
+                  {isSubscribed ? "✓ SUBSCRIBED" : "SUBSCRIBE"}
                 </button>
               </div>
             </div>
           </div>
 
           <div className="lg:col-span-3">
-            <h4 className="text-[10px] font-black text-white uppercase tracking-[0.2em] mb-6 italic">Capabilities</h4>
+            <h4 className="text-[10px] font-black text-white uppercase tracking-[0.2em] mb-6">Services</h4>
             <ul className="space-y-4">
-              <li className="text-xs uppercase tracking-widest text-gray-500 font-bold hover:text-primary transition-colors cursor-pointer">// Web Systems</li>
-              <li className="text-xs uppercase tracking-widest text-gray-500 font-bold hover:text-primary transition-colors cursor-pointer">// UI Engineering</li>
-              <li className="text-xs uppercase tracking-widest text-gray-500 font-bold hover:text-primary transition-colors cursor-pointer">// Neural Apps</li>
-              <li className="text-xs uppercase tracking-widest text-gray-500 font-bold hover:text-primary transition-colors cursor-pointer">// Growth Eng</li>
+              <li className="text-xs uppercase tracking-widest text-gray-500 font-bold hover:text-primary transition-colors cursor-pointer">// Custom Web Apps</li>
+              <li className="text-xs uppercase tracking-widest text-gray-500 font-bold hover:text-primary transition-colors cursor-pointer">// UI/UX Design</li>
+              <li className="text-xs uppercase tracking-widest text-gray-500 font-bold hover:text-primary transition-colors cursor-pointer">// Software Engineering</li>
+              <li className="text-xs uppercase tracking-widest text-gray-500 font-bold hover:text-primary transition-colors cursor-pointer">// Growth Strategy</li>
             </ul>
           </div>
 
           <div className="lg:col-span-4">
-            <h4 className="text-[10px] font-black text-white uppercase tracking-[0.2em] mb-6 italic">Communication</h4>
+            <h4 className="text-[10px] font-black text-white uppercase tracking-[0.2em] mb-6">Contact Us</h4>
             <div className="space-y-6">
               <a href="mailto:hello@build-with-ugob.com.ng" className="block text-xs uppercase tracking-[0.2em] text-gray-400 hover:text-primary transition-colors font-bold">
                 hello@build-with-ugob.com.ng
@@ -90,7 +90,7 @@ const Footer = () => {
 
         <div className="border-t border-white/5 py-10 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-[10px] uppercase tracking-[0.2em] text-gray-600 font-black">
-            © {new Date().getFullYear()} Build With Ugo.B // All Protocols Reserved.
+            © {new Date().getFullYear()} Ugo.B Engineering // All Rights Reserved.
           </p>
           <div className="flex gap-8">
             <a href="#" className="text-[10px] uppercase tracking-widest text-gray-600 font-bold hover:text-white transition-colors">Privacy</a>
