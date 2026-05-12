@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 const CodeBlock = () => {
@@ -50,7 +51,7 @@ launch(project);`;
       } else if (match[2] !== undefined) {
         const quote = escapeHtml(match[2]);
         const content = escapeHtml(match[3]);
-        result += `<span class="text-[#00D1FF]">${quote}${content}${quote}</span>`;
+        result += `<span class="text-primary">${quote}${content}${quote}</span>`;
       } else if (match[4]) {
         result += `<span class="text-purple-400">${escapeHtml(match[4])}</span>`;
       } else if (match[5]) {
@@ -67,8 +68,8 @@ launch(project);`;
   };
 
   return (
-    <div className="relative bg-[#0A0A0B] p-6 rounded-3xl shadow-2xl border border-white/5 w-full max-w-lg font-mono text-xs md:text-sm overflow-hidden group">
-      <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+    <div className="relative bg-brand-surface p-8 rounded-[32px] shadow-3xl border border-white/5 w-full max-w-lg font-mono text-xs md:text-sm overflow-hidden group">
+      <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
       <div className="flex items-center gap-2 mb-6 relative z-10">
         <div className="w-2.5 h-2.5 rounded-full bg-red-500/50"></div>
         <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/50"></div>
@@ -84,66 +85,61 @@ launch(project);`;
 };
 
 const Hero = () => {
-  const whatsappUrl = "https://wa.me/2348103579586?text=Hi%20Ugo,%20I'd%20like%20to%20discuss%20a%20project.";
-
   return (
     <section id="home" className="relative pt-40 pb-24 lg:pt-56 lg:pb-40 bg-brand-bg overflow-hidden">
       {/* Dynamic Background Elements */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] -translate-y-1/2"></div>
-      <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-purple-500/5 rounded-full blur-[100px] translate-y-1/2"></div>
-      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-[0.03]"></div>
-
+      <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[150px] -translate-y-1/2"></div>
+      <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-white/5 rounded-full blur-[100px] translate-y-1/2"></div>
+      
       <div className="container mx-auto px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           <motion.div 
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
             className="max-w-2xl"
           >
-            <div className="inline-flex items-center gap-3 px-4 py-2 bg-white/5 border border-white/10 rounded-full text-[10px] uppercase tracking-[0.2em] font-bold text-primary mb-10">
+            <div className="inline-flex items-center gap-3 px-4 py-2 bg-white/5 border border-white/10 rounded-full text-[10px] uppercase tracking-[0.3em] font-medium text-primary mb-10">
               <span className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse"></span>
-              Pioneering Digital Solutions
+              Pioneering Digital Architecture
             </div>
 
-            <h1 className="text-6xl lg:text-7xl xl:text-8xl font-black text-white leading-[0.95] tracking-tighter mb-8 italic uppercase">
-              Build <br />
-              <span className="text-primary not-italic">Beyond</span> <br />
-              Limits.
+            <h1 className="text-6xl lg:text-8xl xl:text-9xl font-display font-medium text-white leading-[0.85] tracking-tighter mb-10">
+              Building <br />
+              <span className="text-primary italic">Beyond</span> <br />
+              Digital.
             </h1>
 
             <p className="text-lg lg:text-xl text-gray-400 leading-relaxed mb-12 max-w-xl font-light">
-              We engineer high-performance digital ecosystems that redefine industries. From architecture to deployment, we deliver precision.
+              We engineer high-performance digital ecosystems that redefine industries. Precision engineering meets uncompromising design.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-5">
-              <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-3 px-10 py-5 text-sm font-bold uppercase tracking-widest text-black bg-primary rounded-2xl hover:bg-white transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,209,255,0.4)] group"
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-3 px-10 py-5 text-sm font-bold uppercase tracking-widest text-black bg-primary rounded-2xl hover:bg-white transition-all duration-300 hover:shadow-[0_0_30px_rgba(212,175,55,0.4)] group"
               >
-                Chat on WhatsApp
+                Launch a Project
                 <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                   <path d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
-              </a>
+              </Link>
 
-              <a
+              <Link
                 href="/portfolio"
-                className="inline-flex items-center justify-center gap-3 px-10 py-5 text-sm font-bold uppercase tracking-widest text-white bg-transparent border-2 border-white/10 rounded-2xl hover:border-white transition-all duration-300 group"
+                className="inline-flex items-center justify-center gap-3 px-10 py-5 text-sm font-bold uppercase tracking-widest text-white bg-transparent border border-white/10 rounded-2xl hover:border-white transition-all duration-300 group"
               >
-                View Manifest
-              </a>
+                Our Manifest
+              </Link>
             </div>
 
             <div className="flex items-center gap-12 mt-16 pt-10 border-t border-white/5">
               <div>
-                <div className="text-4xl font-display font-black text-white tracking-tighter">25+</div>
+                <div className="text-4xl font-display font-medium text-white tracking-tighter italic">25+</div>
                 <div className="text-[10px] uppercase tracking-widest text-gray-500 font-bold mt-1">Systems Deployed</div>
               </div>
               <div>
-                <div className="text-4xl font-display font-black text-white tracking-tighter">100%</div>
+                <div className="text-4xl font-display font-medium text-white tracking-tighter italic">100%</div>
                 <div className="text-[10px] uppercase tracking-widest text-gray-500 font-bold mt-1">SLA Compliance</div>
               </div>
             </div>

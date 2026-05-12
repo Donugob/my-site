@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 const AboutContent = () => {
@@ -68,17 +69,17 @@ const AboutContent = () => {
             <div className="inline-block px-4 py-1.5 bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-[0.2em] rounded-full mb-8">
               The Architect
             </div>
-            <h1 className="text-6xl lg:text-9xl font-display font-black text-white mb-10 italic uppercase tracking-tighter leading-[0.85]">
+            <h1 className="text-6xl lg:text-9xl font-display font-medium text-white mb-10 tracking-tighter leading-[0.85]">
               Logic <br />
-              <span className="text-primary not-italic">& Aesthetic</span>
+              <span className="text-primary italic">& Aesthetic</span>
             </h1>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 text-left mt-20 items-start">
-               <p className="text-2xl text-white font-light leading-snug italic">
+               <p className="text-2xl text-white font-light leading-snug">
                 “I don't just build websites. I engineer digital legacies that stand at the intersection of technical excellence and human intuition.”
               </p>
               <div className="space-y-6">
                 <p className="text-gray-400 font-light leading-relaxed">
-                  I am <span className="text-white font-black italic">Ugochukwu B.</span> — a Lead Engineer who balances the rigid structure of Law with the fluid creativity of Digital Engineering. 
+                  I am <span className="text-white font-bold italic">Ugochukwu B.</span> — a Lead Engineer who balances the rigid structure of Law with the fluid creativity of Digital Engineering. 
                 </p>
                 <p className="text-gray-400 font-light leading-relaxed">
                   Based in Owerri, operating globally. My mission is to elevate brands through high-performance digital ecosystems that are as secure as they are immersive.
@@ -94,8 +95,8 @@ const AboutContent = () => {
         <div className="container mx-auto px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-24">
-              <h2 className="text-5xl lg:text-6xl font-display font-black text-white italic uppercase tracking-tighter mb-4">
-                The <span className="text-primary not-italic">Trajectory</span>
+              <h2 className="text-5xl lg:text-6xl font-display font-medium text-white tracking-tighter mb-4">
+                The <span className="text-primary italic">Trajectory</span>
               </h2>
               <p className="text-gray-500 font-light">From initial code to a premier engineering agency.</p>
             </div>
@@ -120,7 +121,7 @@ const AboutContent = () => {
                        </div>
                     </div>
                     
-                    <div className="relative z-10 w-4 h-4 rounded-full bg-primary shadow-[0_0_20px_rgba(0,209,255,0.8)] border-4 border-brand-bg"></div>
+                    <div className="relative z-10 w-4 h-4 rounded-full bg-primary shadow-[0_0_20px_rgba(212,175,55,0.8)] border-4 border-brand-bg"></div>
                     
                     <div className="flex-1 hidden lg:block"></div>
                  </motion.div>
@@ -138,8 +139,8 @@ const AboutContent = () => {
                <div className="inline-block px-4 py-1.5 bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-[0.2em] rounded-full mb-8">
                 Operating Principles
               </div>
-              <h2 className="text-5xl lg:text-6xl font-display font-black text-white italic uppercase tracking-tighter mb-4">
-                Core <span className="text-primary not-italic">Protocols</span>
+              <h2 className="text-5xl lg:text-6xl font-display font-medium text-white tracking-tighter mb-4">
+                Core <span className="text-primary italic">Protocols</span>
               </h2>
             </div>
 
@@ -179,29 +180,26 @@ const AboutContent = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="py-32 bg-brand-bg">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-6xl lg:text-8xl font-display font-black text-white italic uppercase tracking-tighter leading-[0.9] mb-12">
-              Ready to <br />
-              <span className="text-primary not-italic">Sync?</span>
+            <h2 className="text-6xl lg:text-9xl font-display font-medium text-white tracking-tighter leading-[0.85] mb-12">
+              Start Your <br />
+              <span className="text-primary italic">Expedition.</span>
             </h2>
             <p className="text-xl text-gray-400 max-w-xl mx-auto leading-relaxed font-light mb-16">
               Establish a direct line of communication with the architect for your next high-performance project.
             </p>
             
-            <a
-              href="https://wa.me/2348103579586"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-4 px-12 py-6 bg-primary text-black font-black uppercase tracking-widest text-sm rounded-2xl hover:bg-white transition-all duration-300 hover:shadow-[0_0_40px_rgba(0,209,255,0.4)] group"
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-4 px-12 py-6 bg-primary text-black font-bold uppercase tracking-widest text-sm rounded-2xl hover:bg-white transition-all duration-300 hover:shadow-[0_0_40px_rgba(212,175,55,0.4)] group"
             >
-              Initialize WhatsApp Session
+              Initialize Collaboration
               <svg className="w-6 h-6 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
                 <path d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
-            </a>
+            </Link>
           </div>
         </div>
       </section>

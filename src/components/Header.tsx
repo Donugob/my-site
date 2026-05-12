@@ -26,13 +26,13 @@ const Header = () => {
 
   const closeMenu = () => setIsOpen(false);
 
-  const whatsappUrl = "https://wa.me/2348103579586?text=Hi%20Ugo,%20I'd%20like%20to%20discuss%20a%20project.";
+
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled 
-          ? "bg-[#050505]/80 backdrop-blur-xl border-b border-white/5 py-3" 
+          ? "bg-brand-bg/80 backdrop-blur-xl border-b border-white/5 py-3" 
           : "bg-transparent py-6"
       }`}
     >
@@ -60,19 +60,16 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* CTA Button */}
           <div className="hidden md:block">
-            <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-2.5 text-xs font-bold uppercase tracking-wider text-black bg-primary rounded-full hover:bg-white transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,209,255,0.3)] group"
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 px-6 py-2.5 text-xs font-bold uppercase tracking-wider text-black bg-primary rounded-full hover:bg-white transition-all duration-300 hover:shadow-[0_0_20px_rgba(212,175,55,0.3)] group"
             >
-              Chat on WhatsApp
+              Start a Project
               <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                 <path d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -111,13 +108,13 @@ const Header = () => {
                 </Link>
               ))}
               <div className="pt-6">
-                <a
-                  href={whatsappUrl}
+                <Link
+                  href="/contact"
                   onClick={closeMenu}
                   className="flex items-center justify-center w-full px-6 py-4 text-sm font-bold uppercase tracking-widest text-black bg-primary rounded-xl"
                 >
-                  Chat on WhatsApp
-                </a>
+                  Start a Project
+                </Link>
               </div>
             </div>
           </motion.div>

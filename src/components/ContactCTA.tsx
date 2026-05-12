@@ -24,7 +24,7 @@ const ContactCTA = () => {
     return () => observer.disconnect();
   }, [hasAnimated]);
 
-  const whatsappUrl = "https://wa.me/2348103579586?text=Hi%20Ugo,%20I'd%20like%20to%20discuss%20a%20project.";
+
 
   return (
     <section
@@ -54,23 +54,21 @@ const ContactCTA = () => {
                 </span>
               </div>
 
-              <h2 className="text-6xl lg:text-8xl font-display font-black text-white mb-8 italic uppercase tracking-tighter leading-[0.9]">
-                Initiate <br />
-                <span className="text-primary not-italic">Connection</span>
+              <h2 className="text-6xl lg:text-9xl font-display font-medium text-white mb-8 tracking-tighter leading-[0.85]">
+                Design Your <br />
+                <span className="text-primary italic">Legacy</span>
               </h2>
 
               <p className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed font-light mb-16">
-                Direct access to our engineering team. We prioritize WhatsApp for rapid synchronization and decision making.
+                Direct access to our engineering team. We prioritize clarity, precision, and high-performance collaboration.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-6 w-full max-w-lg justify-center">
                 <a
-                  href={whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 inline-flex items-center justify-center gap-4 px-10 py-6 bg-primary text-black font-black uppercase tracking-widest text-sm rounded-2xl hover:bg-white transition-all duration-300 hover:shadow-[0_0_40px_rgba(0,209,255,0.4)] group"
+                  href="/contact"
+                  className="flex-1 inline-flex items-center justify-center gap-4 px-10 py-6 bg-primary text-black font-bold uppercase tracking-widest text-sm rounded-2xl hover:bg-white transition-all duration-300 hover:shadow-[0_0_40px_rgba(212,175,55,0.4)] group"
                 >
-                  WhatsApp
+                  Start Project
                   <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
                     <path d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
@@ -78,9 +76,9 @@ const ContactCTA = () => {
                 
                 <a
                   href="mailto:hello@build-with-ugob.com.ng"
-                  className="flex-1 inline-flex items-center justify-center gap-4 px-10 py-6 bg-white/5 backdrop-blur-sm border border-white/10 text-white font-black uppercase tracking-widest text-sm rounded-2xl hover:bg-white/10 hover:border-white/20 transition-all duration-300"
+                  className="flex-1 inline-flex items-center justify-center gap-4 px-10 py-6 bg-white/5 backdrop-blur-sm border border-white/10 text-white font-bold uppercase tracking-widest text-sm rounded-2xl hover:bg-white/10 hover:border-white/20 transition-all duration-300"
                 >
-                  Email Protocol
+                  Email Briefing
                 </a>
               </div>
 

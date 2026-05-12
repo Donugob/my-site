@@ -8,24 +8,24 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Outfit", "Inter", "sans-serif"],
-        display: ["Syne", "Sora", "sans-serif"],
+        sans: ["'Plus Jakarta Sans'", "sans-serif"],
+        display: ["'Cormorant Garamond'", "serif"],
       },
 
       colors: {
         primary: {
-          DEFAULT: "#00D1FF", // Electric Cyan
-          dark: "#00A3CC",
+          DEFAULT: "#D4AF37", // Champagne Gold
+          dark: "#B5952F",
         },
         brand: {
-          bg: "#050505", // Deep Midnight
-          surface: "#0A0A0B",
-          text: "#F9FAFB",
-          subtle: "#9CA3AF",
+          bg: "#070707", // Deep Onyx
+          surface: "#111111",
+          text: "#F4F4F5",
+          subtle: "#A1A1AA",
         },
         accent: {
-          DEFAULT: "#00D1FF",
-          muted: "rgba(0, 209, 255, 0.1)",
+          DEFAULT: "#D4AF37",
+          muted: "rgba(212, 175, 55, 0.1)",
         }
       },
 

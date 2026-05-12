@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Services from "@/components/Services";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 const ServicesContent = () => {
@@ -69,9 +70,9 @@ const ServicesContent = () => {
             <div className="inline-block px-4 py-1.5 bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-[0.2em] rounded-full mb-8">
               Capabilities Manifest
             </div>
-            <h1 className="text-6xl lg:text-8xl font-display font-black text-white mb-8 italic uppercase tracking-tighter leading-[0.9]">
+            <h1 className="text-6xl lg:text-8xl font-display font-medium text-white mb-8 tracking-tighter leading-[0.9]">
               Engineered <br />
-              <span className="text-primary not-italic">Dominance</span>
+              <span className="text-primary italic">Dominance</span>
             </h1>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed font-light mb-16">
               We architect high-availability digital assets designed for performance, immersion, and conversion.
@@ -108,8 +109,8 @@ const ServicesContent = () => {
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
               <div className="max-w-xl">
-                <h2 className="text-5xl lg:text-6xl font-display font-black text-white italic uppercase tracking-tighter leading-[0.9] mb-6">
-                  Execution <span className="text-primary not-italic">Protocol</span>
+                <h2 className="text-5xl lg:text-6xl font-display font-medium text-white tracking-tighter leading-[0.9] mb-6">
+                  Execution <span className="text-primary italic">Protocol</span>
                 </h2>
                 <p className="text-gray-400 font-light">A systematic approach to engineering excellence and transparent project lifecycle management.</p>
               </div>
@@ -140,7 +141,7 @@ const ServicesContent = () => {
         <div className="container mx-auto px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-20">
-              <h2 className="text-4xl lg:text-5xl font-display font-black text-white italic uppercase tracking-tighter mb-6">Intelligence <span className="text-primary not-italic">Gathering</span></h2>
+              <h2 className="text-4xl lg:text-5xl font-display font-medium text-white tracking-tighter mb-6">Intelligence <span className="text-primary italic">Gathering</span></h2>
               <p className="text-gray-500 font-light">Commonly queried protocols regarding our engineering services.</p>
             </div>
 
@@ -169,25 +170,23 @@ const ServicesContent = () => {
           <div className="max-w-4xl mx-auto bg-brand-surface rounded-[40px] p-16 lg:p-24 border border-white/5 text-center relative overflow-hidden">
              <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px]"></div>
              
-             <h2 className="text-5xl lg:text-7xl font-display font-black text-white italic uppercase tracking-tighter leading-[0.9] mb-8 relative z-10">
+             <h2 className="text-5xl lg:text-7xl font-display font-medium text-white tracking-tighter leading-[0.85] mb-8 relative z-10">
               Initialize <br />
-              <span className="text-primary not-italic">Deployment</span>
+              <span className="text-primary italic">Deployment</span>
             </h2>
             <p className="text-xl text-gray-400 max-w-xl mx-auto leading-relaxed font-light mb-12 relative z-10">
-              Synchronize with our engineering team via WhatsApp for immediate project scoping and architectural review.
+              Coordinate with our engineering team for immediate project scoping and architectural review.
             </p>
             
-            <a
-              href="https://wa.me/2348103579586"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-4 px-12 py-6 bg-primary text-black font-black uppercase tracking-widest text-sm rounded-2xl hover:bg-white transition-all duration-300 hover:shadow-[0_0_40px_rgba(0,209,255,0.4)] group relative z-10"
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-4 px-12 py-6 bg-primary text-black font-bold uppercase tracking-widest text-sm rounded-2xl hover:bg-white transition-all duration-300 hover:shadow-[0_0_40px_rgba(212,175,55,0.4)] group relative z-10"
             >
-              Start WhatsApp Session
+              Start Consultation
               <svg className="w-6 h-6 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
                 <path d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
-            </a>
+            </Link>
           </div>
         </div>
       </section>
