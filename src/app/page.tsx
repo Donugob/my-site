@@ -26,26 +26,24 @@ const App: React.FC = () => {
     <div className="bg-brand-bg text-brand-text font-sans antialiased selection:bg-primary/20 selection:text-primary overflow-x-hidden">
       <main>
         <Hero />
-        <section id="services" className="py-24 bg-brand-surface relative overflow-hidden">
-          {/* Background decoration */}
-          <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2"></div>
-          
-          <div className="container mx-auto px-6 lg:px-8 relative z-10">
-            <div className="w-full mb-20 text-center">
-              <div className="inline-block px-4 py-1.5 bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-[0.2em] rounded-full mb-6">
-                Core Expertise
+        <section id="services" className="pt-32 pb-0 bg-brand-bg relative overflow-hidden">
+          <div className="container mx-auto px-6 lg:px-8 relative z-10 mb-20">
+            <div className="w-full max-w-4xl">
+              <div className="inline-flex items-center gap-3 px-4 py-1.5 border border-white/10 rounded-full text-[10px] uppercase tracking-[0.2em] font-sans text-brand-subtle mb-8">
+                <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                Capabilities
               </div>
-              <h2 className="text-5xl lg:text-6xl font-display font-black text-white mb-6 italic uppercase tracking-tighter">
-                Services <br />
-                <span className="text-primary not-italic">Engineered</span> For Scale
+              <h2 className="text-5xl lg:text-7xl font-display font-bold text-white mb-8 tracking-tighter uppercase">
+                Systems <br />
+                <span className="text-primary">Engineered</span> For Scale.
               </h2>
-              <p className="text-lg text-gray-400 leading-relaxed max-w-2xl mx-auto font-light">
-                We bridge the gap between complex engineering and intuitive design to build products that dominate markets.
+              <p className="text-lg text-brand-subtle leading-relaxed max-w-xl font-sans font-light">
+                Precision-engineered digital ecosystems. We combine deep technical expertise with uncompromising design standards.
               </p>
             </div>
-
-            <Services />
           </div>
+
+          <Services />
         </section>
         <PortfolioHeading />
         <Portfolio />

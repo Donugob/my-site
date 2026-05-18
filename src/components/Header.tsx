@@ -40,16 +40,27 @@ const Header = () => {
         <div className="flex items-center justify-between h-14">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0 group flex items-center gap-4">
-            <div className="relative w-10 h-10 flex items-center justify-center">
-              <svg className="w-full h-full text-primary" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M30 20H55C65 20 72 27 72 37C72 44.5 68 50 62 52.5C70 55.5 75 62.5 75 71C75 81.5 67 90 56 90H30V20Z" stroke="currentColor" strokeWidth="8" strokeLinecap="square"/>
-                <path d="M30 55H58" stroke="currentColor" strokeWidth="8" strokeLinecap="square"/>
-                <rect x="5" y="5" width="90" height="90" stroke="currentColor" strokeWidth="1" strokeDasharray="4 4" opacity="0.3" />
+            <div className="relative w-12 h-12 flex items-center justify-center">
+              <svg className="w-full h-full text-primary transition-transform duration-700 group-hover:rotate-[360deg]" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                {/* Architectural Monogram 'UB' */}
+                <path d="M20 20V70C20 81 29 90 40 90H45V45H75C83 45 90 38 90 30C90 22 83 15 75 15H20V20Z" className="fill-current opacity-10" />
+                <path d="M25 20V65C25 73.2843 31.7157 80 40 80H45V50H70C78.2843 50 85 43.2843 85 35C85 26.7157 78.2843 20 70 20H25Z" stroke="currentColor" strokeWidth="2.5" strokeLinejoin="round" />
+                <path d="M45 50H70C78.2843 50 85 56.7157 85 65C85 73.2843 78.2843 80 70 80H55" stroke="currentColor" strokeWidth="2.5" strokeLinejoin="round" />
+                <path d="M25 40H35" stroke="currentColor" strokeWidth="1.5" />
+                <path d="M25 55H35" stroke="currentColor" strokeWidth="1.5" />
+                {/* Precision accents */}
+                <circle cx="85" cy="35" r="1.5" fill="currentColor" />
+                <circle cx="85" cy="65" r="1.5" fill="currentColor" />
               </svg>
             </div>
-            <span className="text-lg font-display font-medium text-white tracking-[0.2em] uppercase">
-              Ugo.B <span className="text-gray-500 font-light ml-2 border-l border-white/10 pl-3 hidden sm:inline">Engineering</span>
-            </span>
+            <div className="flex flex-col">
+              <span className="text-xl font-display font-medium text-white tracking-[0.25em] leading-none mb-1">
+                UGO.B
+              </span>
+              <span className="text-[10px] text-primary/60 font-medium tracking-[0.4em] uppercase">
+                Engineering
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}

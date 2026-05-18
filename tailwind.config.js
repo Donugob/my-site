@@ -8,24 +8,26 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["'Plus Jakarta Sans'", "sans-serif"],
-        display: ["'Cormorant Garamond'", "serif"],
+        sans: ["'Space Grotesk'", "sans-serif"],
+        display: ["'Space Grotesk'", "sans-serif"],
+        serif: ["'DM Serif Display'", "serif"],
       },
 
       colors: {
         primary: {
-          DEFAULT: "#D4AF37", // Champagne Gold
-          dark: "#B5952F",
+          DEFAULT: "#E5FF00", 
+          dark: "#B3C700",
         },
         brand: {
-          bg: "#070707", // Deep Onyx
+          bg: "#0A0A0A",
           surface: "#111111",
-          text: "#F4F4F5",
+          surfaceBright: "#1A1A1A",
+          text: "#FAFAFA",
           subtle: "#A1A1AA",
         },
         accent: {
-          DEFAULT: "#D4AF37",
-          muted: "rgba(212, 175, 55, 0.1)",
+          DEFAULT: "#E5FF00",
+          muted: "rgba(229, 255, 0, 0.1)",
         }
       },
 
