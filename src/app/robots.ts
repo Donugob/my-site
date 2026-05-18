@@ -7,9 +7,11 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
+        disallow: "/pricing",
       },
     ],
     sitemap: "https://build-with-ugob.com.ng/sitemap.xml",
     host: "https://build-with-ugob.com.ng",
   };
 }
+

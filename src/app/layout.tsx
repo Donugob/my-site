@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
+import PageTransitionProvider from "@/components/PageTransitionProvider";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
@@ -12,18 +13,19 @@ const siteUrl = "https://build-with-ugob.com.ng";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "UGO.B // PRECISION DIGITAL ENGINEERING",
-    template: "%s | UGO.B",
+    default: "Build with Ugo.B — Bespoke Web Design & Custom Development",
+    template: "%s | Build with Ugo.B",
   },
   description:
-    "Ugo.B is a precision digital engineering agency based in Owerri, specializing in high-performance ecosystems and immersive UI/UX.",
+    "Build with Ugo.B is a premium web design and development studio in Imo State, Nigeria. We build beautiful, lightning-fast, and high-converting websites for ambitious companies.",
   keywords: [
-    "Owerri web developer",
-    "Precision Digital Engineering",
-    "Immersive UI/UX",
-    "Ugo.B",
-    "Next.js 16 Expert",
-    "Full-stack Systems",
+    "Build with Ugo.B",
+    "web design agency Imo State",
+    "web developer Owerri",
+    "premium website designer Nigeria",
+    "high-performance web development",
+    "SEO optimization",
+    "e-commerce developer Nigeria",
   ],
   alternates: {
     canonical: siteUrl,
@@ -31,24 +33,24 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: siteUrl,
-    siteName: "Ugo.B Technologies",
-    title: "UGO.B // PRECISION DIGITAL ENGINEERING",
+    siteName: "Build with Ugo.B",
+    title: "Build with Ugo.B — Bespoke Web Design & Custom Development",
     description:
-      "High-performance ecosystems, immersive UI/UX, and top-tier technical SEO. Engineering the future of digital assets.",
+      "Beautiful, custom web design and lightning-fast web development for ambitious brands. Grow your business and stand out today.",
     images: [
       {
         url: `${siteUrl}/og-image.jpg`,
         width: 1200,
         height: 630,
-        alt: "UGO.B — PRECISION DIGITAL ENGINEERING",
+        alt: "Build with Ugo.B — Premium Web Design & Development",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "UGO.B // PRECISION DIGITAL ENGINEERING",
+    title: "Build with Ugo.B — Premium Web Design & Development",
     description:
-      "Premium engineering and architectural design for the modern web.",
+      "Bespoke web design, lightning-fast web development, and top-tier SEO for ambitious brands.",
     images: [`${siteUrl}/og-image.jpg`],
     creator: "@Don_ugob",
   },
@@ -79,22 +81,22 @@ export default function RootLayout({
         />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="UGO.B PRECISION" />
+        <meta property="og:image:alt" content="Build with Ugo.B" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="UGO.B — PRECISION DIGITAL ENGINEERING"
+          content="Build with Ugo.B — Premium Web Design & Development"
         />
         <meta
           name="twitter:description"
-          content="Premium engineering and architectural design for the modern web."
+          content="Bespoke web design, lightning-fast web development, and top-tier SEO for ambitious brands."
         />
         <meta
           name="twitter:image"
           content="https://build-with-ugob.com.ng/og-image.jpg"
         />
-        <meta name="twitter:image:alt" content="UGO.B SOLUTIONS" />
+        <meta name="twitter:image:alt" content="Build with Ugo.B Solutions" />
         <meta name="twitter:creator" content="@Don_ugob" />
 
         <link
@@ -121,7 +123,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "ProfessionalService",
-              name: "Ugo.B",
+              name: "Build with Ugo.B",
               url: "https://build-with-ugob.com.ng",
               telephone: "+234-810-357-9586",
               email: "hello@build-with-ugob.com.ng",
@@ -139,7 +141,9 @@ export default function RootLayout({
 
       <body className="bg-brand-bg text-brand-text antialiased">
         <Header />
-        <main className="min-h-screen">{children}</main>
+        <PageTransitionProvider>
+          <main className="min-h-screen">{children}</main>
+        </PageTransitionProvider>
         <Footer />
 
         <Analytics />

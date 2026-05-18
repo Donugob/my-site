@@ -18,86 +18,38 @@ export const metadata: Metadata = {
 
 const PortfolioPage = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-brand-bg text-brand-text">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-16 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
-        {/* Background decorations */}
-        <div className="absolute top-20 right-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+      <section className="relative pt-40 pb-20 bg-brand-bg overflow-hidden">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2"></div>
 
-        {/* Dot grid pattern */}
-        <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-30"></div>
-
-        <div className="container mx-auto px-6 lg:px-8 relative z-10">
+        <div className="container mx-auto px-6 lg:px-12 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-block px-3 py-1 bg-blue-100 text-blue-700 text-xs font-medium rounded-full mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 border border-primary/10 bg-brand-surface/40 backdrop-blur-md rounded-full text-xs uppercase tracking-[0.2em] font-sans text-primary font-semibold mb-6">
+              <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
               Our Work
             </div>
-            <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-              Projects That Drive
-              <br />
-              Real Results
+            <h1 className="text-5xl lg:text-8xl font-display font-light text-brand-text mb-6 tracking-tight leading-[1.05]">
+              Projects designed to <br />
+              <span className="font-serif italic text-primary font-normal">inspire.</span>
             </h1>
-            <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto mb-8">
-              From startups to established businesses, we've helped transform
-              ideas into powerful digital experiences that users love and
-              businesses grow with.
+            <p className="text-lg text-brand-subtle max-w-2xl mx-auto leading-relaxed font-light mb-12 font-sans">
+              A curated showcase of handcrafted websites, bespoke digital systems, and custom platforms designed to deliver exceptional business growth.
             </p>
 
             {/* Filter/Stats Bar */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center text-sm">
-              <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-lg border border-gray-200">
-                <svg
-                  className="w-4 h-4 text-blue-600"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
-                  ></path>
-                </svg>
-                <span className="font-medium text-gray-900">
-                  25+ Projects Completed
-                </span>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center text-xs font-sans">
+              <div className="flex items-center gap-2 px-5 py-3 bg-brand-surface rounded-full border border-black/5 shadow-sm text-brand-text font-medium">
+                <span className="w-2 h-2 bg-primary rounded-full"></span>
+                25+ Completed Projects
               </div>
-              <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-lg border border-gray-200">
-                <svg
-                  className="w-4 h-4 text-green-600"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
-                  ></path>
-                </svg>
-                <span className="font-medium text-gray-900">
-                  200% Avg Growth
-                </span>
+              <div className="flex items-center gap-2 px-5 py-3 bg-brand-surface rounded-full border border-black/5 shadow-sm text-brand-text font-medium">
+                <span className="w-2 h-2 bg-emerald-500 rounded-full"></span>
+                200% Average Growth
               </div>
-              <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-lg border border-gray-200">
-                <svg
-                  className="w-4 h-4 text-purple-600"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                  ></path>
-                </svg>
-                <span className="font-medium text-gray-900">
-                  6-12 Week Delivery
-                </span>
+              <div className="flex items-center gap-2 px-5 py-3 bg-brand-surface rounded-full border border-black/5 shadow-sm text-brand-text font-medium">
+                <span className="w-2 h-2 bg-amber-500 rounded-full"></span>
+                3-6 Week Delivery
               </div>
             </div>
           </div>
@@ -108,15 +60,14 @@ const PortfolioPage = () => {
       <Portfolio />
 
       {/* Services Showcase */}
-      <section className="py-24 bg-gray-50">
-        <div className="container mx-auto px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Services We Specialize In
+      <section className="py-32 bg-brand-surface border-t border-b border-black/5">
+        <div className="container mx-auto px-6 lg:px-12">
+          <div className="max-w-4xl mx-auto text-center mb-20">
+            <h2 className="text-4xl lg:text-5xl font-display font-light text-brand-text mb-6">
+              Services we <span className="font-serif italic text-primary font-normal">specialize in.</span>
             </h2>
-            <p className="text-lg text-gray-600">
-              Every project in our portfolio showcases our expertise across
-              these key areas
+            <p className="text-brand-subtle font-sans text-sm max-w-lg mx-auto">
+              Every project in our portfolio showcases our absolute commitment and expertise across these core digital pillars.
             </p>
           </div>
 
@@ -124,92 +75,54 @@ const PortfolioPage = () => {
             {[
               {
                 icon: (
-                  <svg
-                    className="w-6 h-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-                    ></path>
+                  <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
                   </svg>
                 ),
-                title: "Web Development",
-                description: "React, Next.js, Node.js",
+                title: "Bespoke Web Coding",
+                description: "Handcrafting clean, responsive websites using Next.js and custom styles for raw speed.",
               },
               {
                 icon: (
-                  <svg
-                    className="w-6 h-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
-                    ></path>
+                  <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
                   </svg>
                 ),
-                title: "UI/UX Design",
-                description: "User-centered design",
+                title: "Premium UI/UX Design",
+                description: "Creating highly customized aesthetic interfaces structured around seamless client conversions.",
               },
               {
                 icon: (
-                  <svg
-                    className="w-6 h-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
-                    ></path>
+                  <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
                   </svg>
                 ),
-                title: "Mobile Apps",
-                description: "iOS & Android",
+                title: "Custom Web Apps",
+                description: "Building responsive tools, secure databases, membership hubs, and administrative panels.",
               },
               {
                 icon: (
-                  <svg
-                    className="w-6 h-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                    ></path>
+                  <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                   </svg>
                 ),
-                title: "SEO & Marketing",
-                description: "Growth strategies",
+                title: "SEO Optimization",
+                description: "Injecting modern speed mechanics and semantic layouts to consistently rank high on search engines.",
               },
             ].map((service, idx) => (
               <div
                 key={idx}
-                className="bg-white rounded-2xl p-6 border border-gray-200 hover:border-blue-600 hover:shadow-lg transition-all duration-300 group"
+                className="bg-brand-bg rounded-[32px] p-8 border border-black/5 hover:border-primary/20 hover:bg-brand-bg/90 hover:shadow-md transition-all duration-500 group shadow-sm flex flex-col"
               >
-                <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-colors shadow-sm">
                   {service.icon}
                 </div>
-                <h3 className="font-semibold text-gray-900 mb-2">
+                <h3 className="font-sans font-semibold text-brand-text mb-3 text-base tracking-tight group-hover:text-primary transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-sm text-gray-600">{service.description}</p>
+                <p className="text-xs text-brand-subtle font-sans leading-relaxed font-light mt-auto">
+                  {service.description}
+                </p>
               </div>
             ))}
           </div>
@@ -217,15 +130,15 @@ const PortfolioPage = () => {
       </section>
 
       {/* Testimonial Section */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-6 lg:px-8">
+      <section className="py-32 bg-brand-bg">
+        <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-                What Our Clients Say
+            <div className="text-center mb-20">
+              <h2 className="text-4xl lg:text-5xl font-display font-light text-brand-text mb-6">
+                What our <span className="font-serif italic text-primary font-normal">Clients Say</span>
               </h2>
-              <p className="text-lg text-gray-600">
-                Don't just take our word for it
+              <p className="text-brand-subtle font-sans text-sm">
+                Partnerships built on transparency, outstanding results, and premium design.
               </p>
             </div>
 
@@ -233,49 +146,46 @@ const PortfolioPage = () => {
               {[
                 {
                   quote:
-                    "Build With Ugo.B transformed our outdated website into a modern, high-performing platform. Sales increased by 200% in the first quarter!",
+                    "Build With Ugo.B transformed our online setup into a modern, high-performing platform. Custom design and simple checkout tripled our business in Owerri!",
                   author: "Richard",
-                  role: "Richie's Pot",
+                  role: "Founder, Richie's Pot",
                   avatar: "https://i.postimg.cc/HxcgH86V/Portrait-Placeholder.png",
                 },
                 {
                   quote:
-                    "The attention to detail and commitment to our vision was exceptional. They delivered ahead of schedule and exceeded all expectations.",
+                    "The dedication to clean layout and easy navigation for student files was outstanding. The system has seen flawless execution since launch.",
                   author: "Zane",
-                  role: "Event Manager, Votesphere",
-                  avatar: "https://i.pravatar.cc/150?img=2",
+                  role: "Director, Votesphere Portal",
+                  avatar: "https://i.postimg.cc/HxcgH86V/Portrait-Placeholder.png",
                 },
               ].map((testimonial, idx) => (
                 <div
                   key={idx}
-                  className="bg-gray-50 rounded-2xl p-8 border border-gray-200"
+                  className="bg-brand-surface rounded-[32px] p-8 border border-black/5 shadow-sm hover:border-primary/20 transition-all duration-300 flex flex-col justify-between"
                 >
-                  <div className="flex gap-1 mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <svg
-                        key={i}
-                        className="w-5 h-5 text-yellow-500"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                      </svg>
-                    ))}
+                  <div>
+                    <div className="flex gap-1 mb-6 text-primary">
+                      {[...Array(5)].map((_, i) => (
+                        <svg key={i} className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                      ))}
+                    </div>
+                    <p className="text-brand-text mb-8 font-serif font-light italic text-base leading-relaxed">
+                      "{testimonial.quote}"
+                    </p>
                   </div>
-                  <p className="text-gray-700 mb-6 leading-relaxed">
-                    "{testimonial.quote}"
-                  </p>
-                  <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-4 border-t border-black/5 pt-6 mt-auto">
                     <img
                       src={testimonial.avatar}
                       alt={testimonial.author}
-                      className="w-12 h-12 rounded-full"
+                      className="w-10 h-10 rounded-full object-cover border border-black/5 grayscale bg-brand-surfaceBright"
                     />
-                    <div>
-                      <div className="font-semibold text-gray-900">
+                    <div className="font-sans text-left">
+                      <div className="font-semibold text-brand-text text-sm">
                         {testimonial.author}
                       </div>
-                      <div className="text-sm text-gray-600">
+                      <div className="text-xs text-brand-subtle">
                         {testimonial.role}
                       </div>
                     </div>
@@ -288,55 +198,30 @@ const PortfolioPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-gray-900 text-white">
-        <div className="container mx-auto px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-              Ready to See Your Project Here?
+      <section className="py-32 bg-brand-bg">
+        <div className="container mx-auto px-6 lg:px-12">
+          <div className="max-w-4xl mx-auto bg-brand-surface rounded-[40px] p-16 lg:p-24 border border-black/5 text-center relative overflow-hidden shadow-sm">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px]"></div>
+             
+            <h2 className="text-5xl lg:text-7xl font-display font-light text-brand-text leading-[1.05] mb-8 relative z-10">
+              Ready to see <br />
+              <span className="font-serif italic text-primary font-normal">your brand grow?</span>
             </h2>
-            <p className="text-gray-300 text-lg mb-8">
-              Let's create something amazing together. Start your project today
-              and join our portfolio of success stories.
+            <p className="text-lg text-brand-subtle max-w-xl mx-auto leading-relaxed font-light mb-12 relative z-10 font-sans">
+              Let's craft a beautiful, high-performing website that sets your business apart. Connect on WhatsApp to get started.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-gray-900 font-medium rounded-full hover:bg-gray-100 transition-all duration-300 hover:shadow-xl hover:shadow-white/20"
+            <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
+              <a
+                href="https://wa.me/2348103579586"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center justify-center gap-3 px-8 py-5 bg-primary text-white font-bold uppercase tracking-widest text-xs transition-all duration-300 hover:bg-primary-dark shadow-sm"
               >
                 Start Your Project
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  ></path>
+                <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
-              </Link>
-              <Link
-                href="#portfolio"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-transparent border-2 border-white/30 text-white font-medium rounded-full hover:bg-white/10 hover:border-white/50 transition-all duration-300"
-              >
-                View More Projects
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M19 9l-7 7-7-7"
-                  ></path>
-                </svg>
-              </Link>
+              </a>
             </div>
           </div>
         </div>

@@ -27,18 +27,18 @@ const App: React.FC = () => {
       <main>
         <Hero />
         <section id="services" className="pt-32 pb-0 bg-brand-bg relative overflow-hidden">
-          <div className="container mx-auto px-6 lg:px-8 relative z-10 mb-20">
+          <div className="container mx-auto px-6 lg:px-12 relative z-10 mb-20">
             <div className="w-full max-w-4xl">
-              <div className="inline-flex items-center gap-3 px-4 py-1.5 border border-white/10 rounded-full text-[10px] uppercase tracking-[0.2em] font-sans text-brand-subtle mb-8">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 border border-primary/10 bg-brand-surface/40 backdrop-blur-md rounded-full text-xs uppercase tracking-[0.2em] font-sans text-primary font-semibold mb-8">
                 <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
                 Capabilities
               </div>
-              <h2 className="text-5xl lg:text-7xl font-display font-bold text-white mb-8 tracking-tighter uppercase">
-                Systems <br />
-                <span className="text-primary">Engineered</span> For Scale.
+              <h2 className="text-5xl lg:text-7xl font-display font-light text-brand-text mb-8 tracking-tight">
+                Websites designed <br />
+                to <span className="font-serif italic text-primary font-normal">drive your success.</span>
               </h2>
               <p className="text-lg text-brand-subtle leading-relaxed max-w-xl font-sans font-light">
-                Precision-engineered digital ecosystems. We combine deep technical expertise with uncompromising design standards.
+                We combine creative styling with practical business solutions to build online platforms that help your company stand out, establish trust, and turn visitors into clients.
               </p>
             </div>
           </div>

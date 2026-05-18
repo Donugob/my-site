@@ -8,26 +8,26 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["'Space Grotesk'", "sans-serif"],
-        display: ["'Space Grotesk'", "sans-serif"],
-        serif: ["'DM Serif Display'", "serif"],
+        sans: ["'Outfit'", "sans-serif"],
+        display: ["'Cormorant Garamond'", "serif"],
+        serif: ["'Cormorant Garamond'", "serif"],
       },
 
       colors: {
         primary: {
-          DEFAULT: "#E5FF00", 
-          dark: "#B3C700",
+          DEFAULT: "#8C6239", 
+          dark: "#6D4C2B",
         },
         brand: {
-          bg: "#0A0A0A",
-          surface: "#111111",
-          surfaceBright: "#1A1A1A",
-          text: "#FAFAFA",
-          subtle: "#A1A1AA",
+          bg: "#FAF6F0",
+          surface: "#F5EFE6",
+          surfaceBright: "#EBE5DA",
+          text: "#1E1E1E",
+          subtle: "#5A5A5A",
         },
         accent: {
-          DEFAULT: "#E5FF00",
-          muted: "rgba(229, 255, 0, 0.1)",
+          DEFAULT: "#4D5D53",
+          muted: "rgba(77, 93, 83, 0.1)",
         }
       },
 

@@ -21,17 +21,17 @@ const WhatsAppWidget = () => {
       >
         <motion.div
           layout
-          className={`flex items-center gap-3 overflow-hidden rounded-full shadow-2xl border transition-colors duration-300 ${
+          className={`flex items-center gap-3 overflow-hidden rounded-full shadow-lg border transition-colors duration-300 ${
             isHovered 
-              ? "bg-primary border-primary text-brand-bg shadow-[0_0_30px_rgba(229,255,0,0.3)]" 
-              : "bg-brand-surface/80 backdrop-blur-md border-white/10 text-white hover:border-white/20"
+              ? "bg-primary border-primary text-white shadow-primary/20" 
+              : "bg-brand-surface/90 backdrop-blur-md border-black/5 text-brand-text hover:border-primary/20"
           }`}
           style={{ height: "56px" }}
         >
           <div className="w-[56px] h-[56px] flex items-center justify-center flex-shrink-0">
-            {/* Minimal WhatsApp Icon (using an SVG path for a speech bubble/phone) */}
+            {/* Minimal WhatsApp Icon */}
             <svg 
-              className={`w-6 h-6 transition-colors duration-300 ${isHovered ? "text-brand-bg" : "text-white"}`} 
+              className={`w-6 h-6 transition-colors duration-300 ${isHovered ? "text-white" : "text-primary"}`} 
               viewBox="0 0 24 24" 
               fill="currentColor"
             >
