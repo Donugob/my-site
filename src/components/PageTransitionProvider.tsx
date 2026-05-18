@@ -4,6 +4,9 @@ import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
+const loaderWords = ["CRAFTING", "ENGINEERING", "PERFORMING", "ESTABLISHING"];
+const brandText = "Build with Ugo.B";
+
 export default function PageTransitionProvider({
   children,
 }: {
@@ -11,149 +14,155 @@ export default function PageTransitionProvider({
 }) {
   const pathname = usePathname();
   const [isInitialLoading, setIsInitialLoading] = useState(true);
-  const [initialPercent, setInitialPercent] = useState(0);
+  const [wordIndex, setWordIndex] = useState(0);
+  const [showBrand, setShowBrand] = useState(false);
   const [isPageSwitching, setIsPageSwitching] = useState(false);
   const [activePath, setActivePath] = useState(pathname);
 
-  // Initial Counter Loader (on first visit)
+  // Initial Loader Word Cascade Sequence
   useEffect(() => {
-    let start = 0;
-    const end = 100;
-    const duration = 1500; // 1.5s total loader time
-    const incrementTime = Math.floor(duration / end);
+    if (wordIndex < loaderWords.length - 1) {
+      const timer = setTimeout(() => {
+        setWordIndex((prev) => prev + 1);
+      }, 280); // Quick, fluid word switching
+      return () => clearTimeout(timer);
+    } else {
+      // Transition to brand name reveal after word cascade
+      const timer = setTimeout(() => {
+        setShowBrand(true);
+      }, 280);
+      return () => clearTimeout(timer);
+    }
+  }, [wordIndex]);
 
-    const timer = setInterval(() => {
-      start += 1;
-      setInitialPercent(start);
-      if (start >= end) {
-        clearInterval(timer);
-        setTimeout(() => {
-          setIsInitialLoading(false);
-        }, 400); // short delay to show "100%" and complete brand text reveal
-      }
-    }, incrementTime);
-
-    return () => clearInterval(timer);
-  }, []);
+  // Handle Loader complete after brand is shown
+  useEffect(() => {
+    if (showBrand) {
+      const timer = setTimeout(() => {
+        setIsInitialLoading(false);
+      }, 1100); // Give the brand text full spotlight before slide out
+      return () => clearTimeout(timer);
+    }
+  }, [showBrand]);
 
   // Listen to pathname changes for page transitions
   useEffect(() => {
     if (pathname !== activePath) {
       setIsPageSwitching(true);
-      // Let the entry transition play, then update active path to switch layouts
       const timeout = setTimeout(() => {
         setActivePath(pathname);
-        // Let the exit transition play
         setTimeout(() => {
           setIsPageSwitching(false);
         }, 600);
       }, 500);
-
       return () => clearTimeout(timeout);
     }
   }, [pathname, activePath]);
 
-  // Loading phase messages
-  const getLoaderMessage = (pct: number) => {
-    if (pct < 25) return "indexing asset matrix...";
-    if (pct < 50) return "assembling layout schema...";
-    if (pct < 75) return "compiling visual aesthetics...";
-    if (pct < 95) return "stabilizing connection tunnels...";
-    return "systems active.";
-  };
+  // Liquid SVG Path definitions for elastic peel-off effect
+  // Flat screen cover coordinates: M 0 0 L 100 0 L 100 100 Q 50 100 0 100 Z
+  // Elastic downward curve coordinates (drag tension as it lifts): M 0 0 L 100 0 L 100 100 Q 50 130 0 100 Z
+  // Fully retracted coordinates: M 0 0 L 100 0 L 100 0 Q 50 0 0 0 Z
+  const svgInitialPath = "M 0 0 L 100 0 L 100 100 Q 50 100 0 100 Z";
+  const svgExitPath = "M 0 0 L 100 0 L 100 0 Q 50 0 0 0 Z";
 
-  const brandText = "Build with Ugo.B";
+  const liquidCurtainVariants = {
+    initial: {
+      d: svgInitialPath,
+    },
+    exit: {
+      d: svgExitPath,
+      transition: {
+        duration: 0.95,
+        ease: [0.76, 0, 0.24, 1], // Pure Locomotive-curve easing
+      },
+    },
+  };
 
   return (
     <>
-      {/* Initial Loader Overlay */}
+      {/* Immersive Award-Winning Initial Loader */}
       <AnimatePresence>
         {isInitialLoading && (
           <motion.div
             initial={{ opacity: 1 }}
             exit={{
-              y: "-100%",
-              transition: { duration: 0.9, ease: [0.76, 0, 0.24, 1] }
+              opacity: 0,
+              transition: { duration: 0.9, delay: 0.1 }
             }}
-            className="fixed inset-0 bg-[#1C1A17] text-[#FAF8F5] z-[9999] flex flex-col justify-between p-8 md:p-16 select-none"
+            className="fixed inset-0 z-[9999] pointer-events-none select-none flex items-center justify-center"
           >
-            {/* Top Bar info */}
-            <div className="flex justify-between items-start">
-              <div className="flex flex-col">
-                <span className="font-sans font-bold uppercase tracking-[0.25em] text-[10px] text-primary animate-pulse">
-                  SYSTEM READY
-                </span>
-                <span className="font-sans text-[8px] text-[#FAF8F5]/40 tracking-wider uppercase mt-1">
-                  digital infrastructure studio
-                </span>
-              </div>
-              <div className="flex items-center gap-1.5 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[9px] font-sans font-bold uppercase tracking-wider text-[#FAF8F5]/60">
-                <span className="w-1.5 h-1.5 bg-primary rounded-full animate-ping"></span>
-                ESTABLISHING TRACE
-              </div>
-            </div>
+            {/* Liquid SVG Curtain layer */}
+            <svg
+              className="absolute inset-0 w-full h-full fill-[#1C1A17] pointer-events-auto"
+              viewBox="0 0 100 100"
+              preserveAspectRatio="none"
+            >
+              <motion.path
+                variants={liquidCurtainVariants}
+                initial="initial"
+                exit="exit"
+              />
+            </svg>
 
-            {/* Central Counter & Geometric Spinning Core */}
-            <div className="flex flex-col items-center justify-center relative w-full">
-              {/* Rotating architectural circular wireframe in background */}
-              <div className="absolute w-72 h-72 md:w-96 md:h-96 pointer-events-none opacity-5 flex items-center justify-center">
-                <motion.div
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-                  className="w-full h-full border border-dashed border-[#FAF8F5] rounded-full relative"
-                >
-                  <div className="absolute top-0 bottom-0 left-1/2 w-px bg-[#FAF8F5]"></div>
-                  <div className="absolute left-0 right-0 top-1/2 h-px bg-[#FAF8F5]"></div>
-                </motion.div>
-              </div>
+            {/* Typography Content container */}
+            <div className="relative z-10 text-center flex flex-col items-center justify-center px-6">
+              {/* Concept Words Cascade */}
+              {!showBrand && (
+                <div className="h-16 overflow-hidden relative flex items-center justify-center">
+                  <motion.div
+                    key={wordIndex}
+                    initial={{ y: 40, opacity: 0, filter: "blur(4px)" }}
+                    animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
+                    exit={{ y: -40, opacity: 0, filter: "blur(4px)" }}
+                    transition={{ duration: 0.25, ease: [0.215, 0.61, 0.355, 1] }}
+                    className="text-sm md:text-md font-sans font-bold uppercase tracking-[0.35em] text-[#FAF8F5]/40 flex items-center gap-2"
+                  >
+                    <span className="w-1.5 h-1.5 bg-primary rounded-full animate-ping"></span>
+                    {loaderWords[wordIndex]}
+                  </motion.div>
+                </div>
+              )}
 
-              {/* Counter Tag */}
-              <div className="mb-4 text-xs font-mono tracking-widest text-[#FAF8F5]/40">
-                [{initialPercent.toString().padStart(3, "0")}%]
-              </div>
+              {/* Majestic Grand Brand Reveal */}
+              {showBrand && (
+                <div className="flex flex-col items-center">
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.92 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
+                    className="flex flex-col items-center"
+                  >
+                    {/* Small technical metadata subtitle */}
+                    <span className="text-[9px] font-sans font-bold uppercase tracking-[0.25em] text-primary mb-3">
+                      DIGITAL STUDIO
+                    </span>
 
-              {/* STAGGERED CHARACTER BRAND REVEAL */}
-              <h1 className="text-4xl md:text-7xl font-display font-light text-[#FAF8F5] tracking-tight leading-none text-center flex flex-wrap justify-center mb-6 max-w-2xl">
-                {brandText.split("").map((char, index) => {
-                  // Let characters reveal staggered based on progress percentage
-                  const charProgressTrigger = (index / brandText.length) * 85;
-                  const isRevealed = initialPercent >= charProgressTrigger;
-
-                  return (
-                    <motion.span
-                      key={index}
-                      initial={{ opacity: 0, y: 15, scale: 0.95 }}
-                      animate={isRevealed ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 15, scale: 0.95 }}
-                      transition={{ duration: 0.45, ease: "easeOut" }}
-                      className={`inline-block ${char === " " ? "w-3 md:w-6" : ""} ${
-                        index >= 11 ? "font-serif italic text-primary" : ""
-                      }`}
+                    {/* Expansive dynamic typography */}
+                    <motion.h1
+                      initial={{ letterSpacing: "0.02em" }}
+                      animate={{ letterSpacing: "0.18em" }}
+                      transition={{ duration: 1, ease: "easeOut" }}
+                      className="text-4xl md:text-7xl font-display font-light text-[#FAF8F5] leading-none text-center tracking-tight"
                     >
-                      {char}
-                    </motion.span>
-                  );
-                })}
-              </h1>
+                      Build with{" "}
+                      <span className="font-serif italic text-primary font-normal">
+                        Ugo.B
+                      </span>
+                    </motion.h1>
 
-              {/* Technical Blueprint Accent Line */}
-              <div className="w-24 md:w-32 h-[1px] bg-primary/20 relative mb-8 overflow-hidden">
-                <motion.div
-                  initial={{ left: "-100%" }}
-                  animate={{ left: "100%" }}
-                  transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute top-0 w-1/2 h-full bg-gradient-to-r from-transparent via-primary to-transparent"
-                />
-              </div>
-
-              <p className="text-[10px] font-sans font-semibold text-primary uppercase tracking-[0.2em]">
-                {getLoaderMessage(initialPercent)}
-              </p>
-            </div>
-
-            {/* Bottom status */}
-            <div className="flex justify-between items-end text-[#FAF8F5]/30 text-[8px] uppercase tracking-widest font-sans font-light">
-              <span>LOC: OWERRI, NIGERIA (5.4833° N, 6.9833° E)</span>
-              <span>© {new Date().getFullYear()}</span>
+                    {/* Scrolling scanning line underneath the brand name */}
+                    <div className="w-24 h-[1px] bg-primary/20 relative mt-6 overflow-hidden rounded-full">
+                      <motion.div
+                        initial={{ left: "-100%" }}
+                        animate={{ left: "100%" }}
+                        transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}
+                        className="absolute top-0 w-1/2 h-full bg-gradient-to-r from-transparent via-primary to-transparent"
+                      />
+                    </div>
+                  </motion.div>
+                </div>
+              )}
             </div>
           </motion.div>
         )}
@@ -171,7 +180,7 @@ export default function PageTransitionProvider({
               transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
               className="absolute inset-0 bg-primary pointer-events-auto shadow-2xl flex items-center justify-center"
             >
-              {/* Subtle visual sweeping brand accent inside the transitioning slide */}
+              {/* Subtle large sweeping brand accent inside the transitioning slide */}
               <motion.div 
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 0.08, scale: 1 }}
