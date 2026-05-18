@@ -36,7 +36,7 @@ const Hero = () => {
               className="inline-flex items-center gap-2 px-3 py-1.5 border border-primary/10 bg-brand-surface/40 backdrop-blur-md rounded-full text-xs uppercase tracking-[0.2em] font-sans text-primary font-semibold mb-8"
             >
               <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
-              Full-Service Web Design & Development Boutique
+              Fullstack Web Design & Development Agency
             </motion.div>
 
             <div className="relative mb-8">
@@ -112,7 +112,7 @@ const Hero = () => {
               </div>
 
               <div className="border-t border-primary/10 pt-6 flex justify-between items-center text-xs uppercase tracking-widest font-sans font-bold text-brand-subtle">
-                <span>IM STATE, NG</span>
+                <span>IMO STATE, NG</span>
                 <span className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-green-500 animate-ping"></span>
                   Active Studio

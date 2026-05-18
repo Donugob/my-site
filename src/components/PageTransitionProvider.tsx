@@ -3,6 +3,12 @@
 import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
+import dynamic from "next/dynamic";
+
+
+const WhatsAppWidget = dynamic(() => import("@/components/WhatsAppWidget"), {
+  ssr: false,
+});
 
 const loaderWords = ["CRAFTING", "ENGINEERING", "PERFORMING", "ESTABLISHING"];
 const brandText = "Build with Ugo.B";
@@ -74,7 +80,7 @@ export default function PageTransitionProvider({
       d: svgExitPath,
       transition: {
         duration: 0.95,
-        ease: [0.76, 0, 0.24, 1], // Pure Locomotive-curve easing
+        ease: [0.76, 0, 0.24, 1] as const, // Pure Locomotive-curve easing
       },
     },
   };
@@ -115,7 +121,7 @@ export default function PageTransitionProvider({
                     initial={{ y: 40, opacity: 0, filter: "blur(4px)" }}
                     animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
                     exit={{ y: -40, opacity: 0, filter: "blur(4px)" }}
-                    transition={{ duration: 0.25, ease: [0.215, 0.61, 0.355, 1] }}
+                    transition={{ duration: 0.25, ease: [0.215, 0.61, 0.355, 1] as const }}
                     className="text-sm md:text-md font-sans font-bold uppercase tracking-[0.35em] text-[#FAF8F5]/40 flex items-center gap-2"
                   >
                     <span className="w-1.5 h-1.5 bg-primary rounded-full animate-ping"></span>
@@ -130,7 +136,7 @@ export default function PageTransitionProvider({
                   <motion.div
                     initial={{ opacity: 0, scale: 0.92 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
+                    transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] as const }}
                     className="flex flex-col items-center"
                   >
                     {/* Small technical metadata subtitle */}
@@ -177,7 +183,7 @@ export default function PageTransitionProvider({
               initial={{ x: "-100%" }}
               animate={{ x: "0%" }}
               exit={{ x: "100%" }}
-              transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
+              transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] as const }}
               className="absolute inset-0 bg-primary pointer-events-auto shadow-2xl flex items-center justify-center"
             >
               {/* Subtle large sweeping brand accent inside the transitioning slide */}
@@ -196,7 +202,7 @@ export default function PageTransitionProvider({
               initial={{ x: "-100%" }}
               animate={{ x: "0%" }}
               exit={{ x: "100%" }}
-              transition={{ duration: 0.5, delay: 0.08, ease: [0.76, 0, 0.24, 1] }}
+              transition={{ duration: 0.5, delay: 0.08, ease: [0.76, 0, 0.24, 1] as const }}
               className="absolute inset-0 bg-[#F4F1EA] pointer-events-auto"
             />
           </div>
@@ -207,6 +213,9 @@ export default function PageTransitionProvider({
       <div className={isPageSwitching ? "opacity-30 pointer-events-none transition-opacity duration-300" : "transition-opacity duration-300"}>
         {children}
       </div>
+
+      {/* Dynamically loaded lead-capture widget */}
+      <WhatsAppWidget />
     </>
   );
 }

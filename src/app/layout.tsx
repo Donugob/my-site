@@ -3,12 +3,12 @@ import "./globals.css";
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import WhatsAppWidget from "@/components/WhatsAppWidget";
 import PageTransitionProvider from "@/components/PageTransitionProvider";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const siteUrl = "https://build-with-ugob.com.ng";
+
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -148,8 +148,8 @@ export default function RootLayout({
 
         <Analytics />
         <SpeedInsights />
-        <WhatsAppWidget />
       </body>
+
     </html>
   );
 }
