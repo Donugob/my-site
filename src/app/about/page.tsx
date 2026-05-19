@@ -3,14 +3,14 @@ import type { Metadata } from "next";
 import AboutContent from "@/components/AboutContent";
 
 export const metadata: Metadata = {
-  title: "About Us",
+  title: "Bespoke Web Designer & Developer in Imo State",
   description:
-    "Learn more about Build With Ugo.B — our mission, vision, and commitment to building powerful, scalable, SEO-optimized websites for forward-thinking brands.",
+    "Learn about Build with Ugo.B, a premium CAC-registered web design and development studio in Owerri, Imo State helping brands scale with custom code and local SEO dominance.",
   alternates: {
     canonical: "https://build-with-ugob.com.ng/about",
   },
   openGraph: {
-    title: "About Build With Ugo.B",
+    title: "Bespoke Web Designer & Developer in Imo State | Build with Ugo.B",
     url: "https://build-with-ugob.com.ng/about",
   },
 };

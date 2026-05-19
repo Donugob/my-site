@@ -4,14 +4,14 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Portfolio",
+  title: "Selected Projects & Bespoke Digital Products",
   description:
-    "Explore the diverse portfolio of Build With Ugo.B, showcasing our expertise in creating high-performance, SEO-optimized websites that drive real business results.",
+    "Explore the selected design and development projects crafted by Build with Ugo.B, showcasing fast speed, responsive UIs, and real-world conversion growth.",
   alternates: {
     canonical: "https://build-with-ugob.com.ng/portfolio",
   },
   openGraph: {
-    title: "Portfolio of Build With Ugo.B",
+    title: "Selected Projects & Bespoke Digital Products | Build with Ugo.B",
     url: "https://build-with-ugob.com.ng/portfolio",
   },
 };

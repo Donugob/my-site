@@ -9,14 +9,25 @@ import type { Metadata } from "next";
 import PortfolioHeading from "@/components/PortfolioHeading";
 
 export const metadata: Metadata = {
-  title: "Homepage | Build With Ugo.B",
+  title: "Bespoke Web Design & Software Engineering Studio",
   description:
-    "Build With Ugo.B, a modern web development agency based in Owerri, Imo State helping brands build high-performance digital experiences with speed, creativity, and precision.",
+    "Build with Ugo.B is a premium web developer in Imo State and Owerri. We design and engineer lightning-fast, high-converting, and SEO-optimized web experiences.",
+  keywords: [
+    "Web developer in Imo State",
+    "Web designer in Owerri",
+    "Bespoke design studio Imo State",
+    "Build with Ugo.B",
+    "Premium website designer Nigeria",
+    "Software Engineer Owerri",
+    "Next.js developer Nigeria",
+  ],
   alternates: {
     canonical: "https://build-with-ugob.com.ng",
   },
   openGraph: {
-    title: "Homepage | Build With Ugo.B",
+    title: "Bespoke Web Design & Software Engineering Studio | Build with Ugo.B",
+    description:
+      "Premium web development agency and web designer in Imo State, Nigeria. We build beautiful, lightning-fast, and high-converting websites for ambitious companies.",
     url: "https://build-with-ugob.com.ng",
   },
 };

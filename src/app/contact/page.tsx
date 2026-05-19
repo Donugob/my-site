@@ -3,14 +3,14 @@ import Contact from "@/components/Contact";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Us",
+  title: "Start Your Project | Consult a Premium Web Developer",
   description:
-    "Get in touch with Build With Ugo.B for inquiries, support, or to start your next project. We're here to help you build high-performance, SEO-optimized digital experiences.",
+    "Get in touch with Build with Ugo.B for inquiries, consultations, or starting your next digital product. High-performance, SEO-dominant websites crafted in Nigeria.",
   alternates: {
     canonical: "https://build-with-ugob.com.ng/contact",
   },
   openGraph: {
-    title: "Contact Build With Ugo.B",
+    title: "Start Your Project | Consult a Premium Web Developer | Build with Ugo.B",
     url: "https://build-with-ugob.com.ng/contact",
   },
 };

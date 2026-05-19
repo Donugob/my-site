@@ -55,8 +55,45 @@ export async function generateMetadata({
   };
 }
 
-const BlogDetailPage = ({ params }: BlogDetailPageProps) => {
-  return <BlogDetail params={params} />;
+const BlogDetailPage = async ({ params }: BlogDetailPageProps) => {
+  const { slug } = await params;
+  const post = getBlogPostBySlug(slug);
+
+  if (!post) {
+    return <BlogDetail params={params} />;
+  }
+
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    image: new URL(post.coverImage, "https://build-with-ugob.com.ng").toString(),
+    datePublished: post.publishedAt,
+    author: {
+      "@type": "Person",
+      name: post.author.name,
+      url: "https://build-with-ugob.com.ng/about",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Build with Ugo.B",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://build-with-ugob.com.ng/logo.png",
+      },
+    },
+    description: post.excerpt,
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
+      <BlogDetail params={params} />
+    </>
+  );
 };
 
 export default BlogDetailPage;

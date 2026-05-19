@@ -4,14 +4,14 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Our Services",
+  title: "Bespoke Web Design, Custom Software & SEO Services",
   description:
-    "Discover the range of services offered by Build With Ugo.B, including web development, UI/UX design, mobile app development, and more, all tailored to help your business grow.",
+    "Explore the premium digital services offered by Build with Ugo.B, including web design, custom backend development, mobile apps, and search engine optimization (SEO).",
   alternates: {
     canonical: "https://build-with-ugob.com.ng/services",
   },
   openGraph: {
-    title: "Our Services",
+    title: "Bespoke Web Design, Custom Software & SEO Services | Build with Ugo.B",
     url: "https://build-with-ugob.com.ng/services",
   },
 };

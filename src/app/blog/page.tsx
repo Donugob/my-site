@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import BlogPageComp from "@/components/BlogPageComp";
 
 export const metadata: Metadata = {
-  title: "Blog | Build With Ugo.B",
+  title: "Technical Insights, Brand Strategy & Growth Essays",
   description:
-    "Latest articles on web development, strategy, SEO, and building better Nigerian businesses.",
+    "Explore Build with Ugo.B's intellectual assets. Essays, guides, and tutorials on modern web engineering, branding design, and local search growth strategies in Nigeria.",
   alternates: {
     canonical: "https://build-with-ugob.com.ng/blog",
   },
   openGraph: {
-    title: "Blog | Build With Ugo.B",
+    title: "Technical Insights, Brand Strategy & Growth Essays | Build with Ugo.B",
     description:
-      "Thoughtful articles on web development, design, and digital strategy.",
+      "Bespoke digital essays on search engine optimization, web page performance design, and fullstack coding by Build with Ugo.B.",
     url: "https://build-with-ugob.com.ng/blog",
     type: "website",
   },
