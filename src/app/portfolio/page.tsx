@@ -149,14 +149,14 @@ const PortfolioPage = () => {
                     "Build With Ugo.B transformed our online setup into a modern, high-performing platform. Custom design and simple checkout tripled our business in Owerri!",
                   author: "Richard",
                   role: "Founder, Richie's Pot",
-                  avatar: "https://i.postimg.cc/HxcgH86V/Portrait-Placeholder.png",
+                  avatar: "/richie.webp",
                 },
                 {
                   quote:
                     "The dedication to clean layout and easy navigation for student files was outstanding. The system has seen flawless execution since launch.",
                   author: "Zane",
                   role: "Director, Votesphere Portal",
-                  avatar: "https://i.postimg.cc/HxcgH86V/Portrait-Placeholder.png",
+                  avatar: "https://i.postimg.cc/k5PhDty1/IMG-20251011-WA0113.jpg",
                 },
               ].map((testimonial, idx) => (
                 <div

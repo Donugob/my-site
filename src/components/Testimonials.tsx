@@ -23,14 +23,14 @@ const testimonials: Testimonial[] = [
       "The attention to detail and design quality is absolutely amazing. Our online inquiries and customer engagement grew dramatically within weeks of launching Richie's Pot.",
     name: "Richard Emeka",
     title: "Owner, Richie's Pot",
-    image: "https://i.postimg.cc/HxcgH86V/Portrait-Placeholder.png",
+    image: "/richie.webp",
   },
   {
     quote:
       "The website designed for our platform is incredibly clean, fast, and easy to use. Our clients constantly compliment us on the premium look and feel.",
     name: "Chinedu Eze",
     title: "Business Partner, Jurismemo",
-    image: "https://i.pravatar.cc/150?img=8",
+    image: "https://i.postimg.cc/HxcgH86V/Portrait-Placeholder.png",
   },
 ];
 

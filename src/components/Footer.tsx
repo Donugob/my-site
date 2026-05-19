@@ -36,7 +36,7 @@ const Footer = () => {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="your.email@domain.com"
+                  placeholder="example@gmail.com"
                   className="flex-1 px-5 py-3.5 bg-brand-surfaceBright border border-black/5 rounded-xl text-xs text-brand-text focus:outline-none focus:border-primary transition-colors font-sans tracking-wide"
                 />
                 <button
