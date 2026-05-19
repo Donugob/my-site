@@ -1,11 +1,25 @@
-// app/layout.tsx
 import "./globals.css";
 import type { Metadata } from "next";
+import { Outfit, Cormorant_Garamond } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageTransitionProvider from "@/components/PageTransitionProvider";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  variable: "--font-outfit",
+  display: "swap",
+});
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  variable: "--font-cormorant",
+  weight: ["300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  display: "swap",
+});
 
 const siteUrl = "https://build-with-ugob.com.ng";
 
@@ -73,7 +87,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className={`scroll-smooth ${outfit.variable} ${cormorant.variable}`}>
       <head>
         <meta
           property="og:image"

@@ -8,9 +8,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["'Outfit'", "sans-serif"],
-        display: ["'Cormorant Garamond'", "serif"],
-        serif: ["'Cormorant Garamond'", "serif"],
+        sans: ["var(--font-outfit)", "sans-serif"],
+        display: ["var(--font-cormorant)", "serif"],
+        serif: ["var(--font-cormorant)", "serif"],
       },
 
       colors: {

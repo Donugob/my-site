@@ -30,13 +30,13 @@ export default function PageTransitionProvider({
     if (wordIndex < loaderWords.length - 1) {
       const timer = setTimeout(() => {
         setWordIndex((prev) => prev + 1);
-      }, 280); // Quick, fluid word switching
+      }, 200); // Swifter word switching
       return () => clearTimeout(timer);
     } else {
       // Transition to brand name reveal after word cascade
       const timer = setTimeout(() => {
         setShowBrand(true);
-      }, 280);
+      }, 200);
       return () => clearTimeout(timer);
     }
   }, [wordIndex]);
@@ -46,7 +46,7 @@ export default function PageTransitionProvider({
     if (showBrand) {
       const timer = setTimeout(() => {
         setIsInitialLoading(false);
-      }, 1100); // Give the brand text full spotlight before slide out
+      }, 800); // Swifter spotlight removal
       return () => clearTimeout(timer);
     }
   }, [showBrand]);
@@ -65,22 +65,15 @@ export default function PageTransitionProvider({
     }
   }, [pathname, activePath]);
 
-  // Liquid SVG Path definitions for elastic peel-off effect
-  // Flat screen cover coordinates: M 0 0 L 100 0 L 100 100 Q 50 100 0 100 Z
-  // Elastic downward curve coordinates (drag tension as it lifts): M 0 0 L 100 0 L 100 100 Q 50 130 0 100 Z
-  // Fully retracted coordinates: M 0 0 L 100 0 L 100 0 Q 50 0 0 0 Z
-  const svgInitialPath = "M 0 0 L 100 0 L 100 100 Q 50 100 0 100 Z";
-  const svgExitPath = "M 0 0 L 100 0 L 100 0 Q 50 0 0 0 Z";
-
-  const liquidCurtainVariants = {
+  const simpleCurtainVariants = {
     initial: {
-      d: svgInitialPath,
+      y: "0%",
     },
     exit: {
-      d: svgExitPath,
+      y: "-100%",
       transition: {
-        duration: 0.95,
-        ease: [0.76, 0, 0.24, 1] as const, // Pure Locomotive-curve easing
+        duration: 0.8,
+        ease: [0.76, 0, 0.24, 1] as const,
       },
     },
   };
@@ -98,18 +91,13 @@ export default function PageTransitionProvider({
             }}
             className="fixed inset-0 z-[9999] pointer-events-none select-none flex items-center justify-center"
           >
-            {/* Liquid SVG Curtain layer */}
-            <svg
-              className="absolute inset-0 w-full h-full fill-[#1C1A17] pointer-events-auto"
-              viewBox="0 0 100 100"
-              preserveAspectRatio="none"
-            >
-              <motion.path
-                variants={liquidCurtainVariants}
-                initial="initial"
-                exit="exit"
-              />
-            </svg>
+            {/* Solid hardware-accelerated curtain layer */}
+            <motion.div
+              variants={simpleCurtainVariants}
+              initial="initial"
+              exit="exit"
+              className="absolute inset-0 w-full h-full bg-[#1C1A17] pointer-events-auto origin-top"
+            />
 
             {/* Typography Content container */}
             <div className="relative z-10 text-center flex flex-col items-center justify-center px-6">
@@ -118,9 +106,9 @@ export default function PageTransitionProvider({
                 <div className="h-16 overflow-hidden relative flex items-center justify-center">
                   <motion.div
                     key={wordIndex}
-                    initial={{ y: 40, opacity: 0, filter: "blur(4px)" }}
-                    animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
-                    exit={{ y: -40, opacity: 0, filter: "blur(4px)" }}
+                    initial={{ y: 40, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -40, opacity: 0 }}
                     transition={{ duration: 0.25, ease: [0.215, 0.61, 0.355, 1] as const }}
                     className="text-sm md:text-md font-sans font-bold uppercase tracking-[0.35em] text-[#FAF8F5]/40 flex items-center gap-2"
                   >
@@ -174,43 +162,32 @@ export default function PageTransitionProvider({
         )}
       </AnimatePresence>
 
-      {/* Page Switch Transition Overlay (Curtain Wipe) */}
+      {/* Page Switch Transition Overlay (Centered Spinner) */}
       <AnimatePresence mode="wait">
         {isPageSwitching && (
-          <div className="fixed inset-0 z-[999] pointer-events-none">
-            {/* Primary terracotta slide cover */}
-            <motion.div
-              initial={{ x: "-100%" }}
-              animate={{ x: "0%" }}
-              exit={{ x: "100%" }}
-              transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] as const }}
-              className="absolute inset-0 bg-primary pointer-events-auto shadow-2xl flex items-center justify-center"
-            >
-              {/* Subtle large sweeping brand accent inside the transitioning slide */}
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 0.08, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.3 }}
-                className="text-white text-5xl md:text-7xl font-serif italic uppercase tracking-widest select-none font-bold"
-              >
-                UGO.B
-              </motion.div>
-            </motion.div>
-            {/* Secondary warm sand offset slide cover */}
-            <motion.div
-              initial={{ x: "-100%" }}
-              animate={{ x: "0%" }}
-              exit={{ x: "100%" }}
-              transition={{ duration: 0.5, delay: 0.08, ease: [0.76, 0, 0.24, 1] as const }}
-              className="absolute inset-0 bg-[#F4F1EA] pointer-events-auto"
-            />
-          </div>
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-[999] pointer-events-none flex items-center justify-center bg-brand-bg/40 backdrop-blur-sm"
+          >
+            <div className="relative flex items-center justify-center">
+              {/* Spinning outer ring in brand primary color */}
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
+                className="absolute w-16 h-16 rounded-full border-[3px] border-primary/20 border-t-primary"
+              />
+              {/* Inner styled 'B' */}
+              <span className="font-serif italic text-primary text-3xl font-bold">B</span>
+            </div>
+          </motion.div>
         )}
       </AnimatePresence>
 
       {/* Main children layout rendering the active pathname state */}
-      <div className={isPageSwitching ? "opacity-30 pointer-events-none transition-opacity duration-300" : "transition-opacity duration-300"}>
+      <div className={isPageSwitching ? "opacity-40 blur-[2px] pointer-events-none transition-all duration-300" : "opacity-100 blur-0 transition-all duration-300"}>
         {children}
       </div>
 
