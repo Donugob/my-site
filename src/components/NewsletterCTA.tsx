@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface NewsletterCTAProps {
   className?: string;
@@ -9,16 +9,37 @@ interface NewsletterCTAProps {
 
 export const NewsletterCTA = ({ className = "" }: NewsletterCTAProps) => {
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<
-    "idle" | "loading" | "success" | "error"
-  >("idle");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!email) return;
+
     setStatus("loading");
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    setStatus("success");
-    setEmail("");
+    setErrorMessage("");
+
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Something went wrong.");
+      }
+
+      setStatus("success");
+      setEmail("");
+    } catch (err: any) {
+      setStatus("error");
+      setErrorMessage(err.message || "Failed to subscribe.");
+    }
   };
 
   return (
@@ -56,16 +77,43 @@ export const NewsletterCTA = ({ className = "" }: NewsletterCTAProps) => {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Subject Email"
                 required
-                className="flex-1 bg-brand-bg border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-primary/40 transition-all text-white text-sm"
+                disabled={status === "loading" || status === "success"}
+                className="flex-1 bg-brand-bg border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-primary/40 transition-all text-white text-sm disabled:opacity-50"
               />
               <button
                 type="submit"
-                disabled={status === "loading"}
-                className="px-10 py-4 bg-primary text-black font-black uppercase tracking-widest text-[10px] rounded-2xl hover:bg-white transition-all duration-300 disabled:opacity-50"
+                disabled={status === "loading" || status === "success"}
+                className="px-10 py-4 bg-primary text-black font-black uppercase tracking-widest text-[10px] rounded-2xl hover:bg-white transition-all duration-300 disabled:opacity-50 whitespace-nowrap"
               >
                 {status === "loading" ? "Syncing..." : status === "success" ? "Authorized" : "Authorize"}
               </button>
             </form>
+            
+            {/* Premium feedback indicators */}
+            <AnimatePresence mode="wait">
+              {status === "error" && errorMessage && (
+                <motion.p
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  className="mt-6 text-xs font-sans font-bold tracking-[0.15em] text-red-500 uppercase flex items-center justify-center gap-2"
+                >
+                  <span className="w-1.5 h-1.5 bg-red-500 rounded-full"></span>
+                  {errorMessage}
+                </motion.p>
+              )}
+              {status === "success" && (
+                <motion.p
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  className="mt-6 text-xs font-sans font-bold tracking-[0.15em] text-green-500 uppercase flex items-center justify-center gap-2"
+                >
+                  <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-ping"></span>
+                  Synchronization Authorized
+                </motion.p>
+              )}
+            </AnimatePresence>
             
             <div className="mt-12 flex justify-center items-center gap-6">
                <div className="flex -space-x-3">

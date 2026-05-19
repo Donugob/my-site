@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { blogPosts } from "@/data/blogPosts";
 
 const BlogPageComp = () => {
@@ -13,6 +13,40 @@ const BlogPageComp = () => {
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+
+    setStatus("loading");
+    setErrorMessage("");
+
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Failed to subscribe.");
+      }
+
+      setStatus("success");
+      setEmail("");
+    } catch (err: any) {
+      setStatus("error");
+      setErrorMessage(err.message || "Something went wrong.");
+    }
+  };
 
   const [featured, ...recentPosts] = blogPosts;
 
@@ -241,16 +275,53 @@ const BlogPageComp = () => {
               Direct access to local search updates, performance optimization tips, and digital growth playbooks.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+            <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <input
                 type="email"
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                  if (status === "error") setStatus("idle");
+                }}
                 placeholder="Digital Identity (Email)"
-                className="flex-1 bg-brand-bg border border-black/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-primary/30 transition-all text-brand-text text-sm font-sans placeholder-brand-subtle/50"
+                required
+                disabled={status === "loading" || status === "success"}
+                className="flex-1 bg-brand-bg border border-black/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-primary/30 transition-all text-brand-text text-sm font-sans placeholder-brand-subtle/50 disabled:opacity-50"
               />
-              <button className="px-10 py-4 bg-primary text-white font-sans font-bold uppercase tracking-widest text-xs rounded-2xl hover:bg-primary-dark transition-all duration-300 shadow-sm">
-                Authorize
+              <button
+                type="submit"
+                disabled={status === "loading" || status === "success"}
+                className="px-10 py-4 bg-primary text-white font-sans font-bold uppercase tracking-widest text-xs rounded-2xl hover:bg-primary-dark transition-all duration-300 shadow-sm disabled:opacity-50 whitespace-nowrap"
+              >
+                {status === "loading" ? "Syncing..." : status === "success" ? "Authorized" : "Authorize"}
               </button>
-            </div>
+            </form>
+
+            {/* Premium feedback indicators */}
+            <AnimatePresence mode="wait">
+              {status === "error" && errorMessage && (
+                <motion.p
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  className="mt-6 text-xs font-sans font-bold tracking-[0.15em] text-red-500 uppercase flex items-center justify-center gap-2"
+                >
+                  <span className="w-1.5 h-1.5 bg-red-500 rounded-full"></span>
+                  {errorMessage}
+                </motion.p>
+              )}
+              {status === "success" && (
+                <motion.p
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  className="mt-6 text-xs font-sans font-bold tracking-[0.15em] text-green-600 uppercase flex items-center justify-center gap-2"
+                >
+                  <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-ping"></span>
+                  Synchronization Authorized
+                </motion.p>
+              )}
+            </AnimatePresence>
           </div>
         </div>
       </section>

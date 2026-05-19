@@ -1,19 +1,44 @@
 "use client";
 
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
-  const [isSubscribed, setIsSubscribed] = useState(false);
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
-      setIsSubscribed(true);
+    if (!email) return;
+
+    setStatus("loading");
+    setErrorMessage("");
+
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Failed to subscribe.");
+      }
+
+      setStatus("success");
+      setEmail("");
+      
       setTimeout(() => {
-        setIsSubscribed(false);
-        setEmail("");
-      }, 3000);
+        setStatus("idle");
+      }, 4000);
+    } catch (err: any) {
+      setStatus("error");
+      setErrorMessage(err.message || "Something went wrong.");
     }
   };
 
@@ -31,20 +56,53 @@ const Footer = () => {
 
             <div className="mt-10">
               <h4 className="text-[10px] font-bold text-brand-text uppercase tracking-[0.2em] mb-4 font-sans">Join Our Newsletter</h4>
-              <div className="flex gap-3 max-w-sm">
+              <form onSubmit={handleSubscribe} className="flex gap-3 max-w-sm">
                 <input
                   type="email"
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                    if (status === "error") setStatus("idle");
+                  }}
                   placeholder="example@gmail.com"
-                  className="flex-1 px-5 py-3.5 bg-brand-surfaceBright border border-black/5 rounded-xl text-xs text-brand-text focus:outline-none focus:border-primary transition-colors font-sans tracking-wide"
+                  disabled={status === "loading" || status === "success"}
+                  className="flex-1 px-5 py-3.5 bg-brand-surfaceBright border border-black/5 rounded-xl text-xs text-brand-text focus:outline-none focus:border-primary transition-colors font-sans tracking-wide disabled:opacity-50"
                 />
                 <button
-                  onClick={handleSubscribe}
-                  className="px-6 py-3.5 bg-primary text-white text-[10px] font-bold uppercase tracking-widest rounded-xl hover:bg-primary-dark transition-colors whitespace-nowrap font-sans"
+                  type="submit"
+                  disabled={status === "loading" || status === "success"}
+                  className="px-6 py-3.5 bg-primary text-white text-[10px] font-bold uppercase tracking-widest rounded-xl hover:bg-primary-dark transition-colors whitespace-nowrap font-sans disabled:opacity-50"
                 >
-                  {isSubscribed ? "✓ Subscribed" : "Subscribe"}
+                  {status === "loading" ? "Syncing..." : status === "success" ? "✓ Subscribed" : "Subscribe"}
                 </button>
+              </form>
+
+              {/* Status Message */}
+              <div className="h-4 mt-2 overflow-hidden">
+                <AnimatePresence mode="wait">
+                  {status === "error" && errorMessage && (
+                    <motion.p
+                      initial={{ opacity: 0, y: -5 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -5 }}
+                      className="text-[9px] font-sans font-bold tracking-[0.1em] text-red-500 uppercase flex items-center gap-1.5"
+                    >
+                      <span className="w-1 h-1 bg-red-500 rounded-full"></span>
+                      {errorMessage}
+                    </motion.p>
+                  )}
+                  {status === "success" && (
+                    <motion.p
+                      initial={{ opacity: 0, y: -5 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -5 }}
+                      className="text-[9px] font-sans font-bold tracking-[0.1em] text-green-600 uppercase flex items-center gap-1.5"
+                    >
+                      <span className="w-1 h-1 bg-green-500 rounded-full animate-ping"></span>
+                      Successfully Subscribed!
+                    </motion.p>
+                  )}
+                </AnimatePresence>
               </div>
             </div>
           </div>
