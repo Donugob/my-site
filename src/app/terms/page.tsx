@@ -118,10 +118,10 @@ const TermsOfService = () => {
             <section className="space-y-4">
               <h2 className="text-lg font-serif font-medium text-brand-text tracking-tight">7. Governing Law & Dispute Resolution</h2>
               <p>
-                These Terms of Service are exclusively governed by, construed, and enforced in accordance with the laws of the **Federal Republic of Nigeria**.
+                These Terms of Service are exclusively governed by, construed, and enforced in accordance with the laws of the Federal Republic of Nigeria.
               </p>
               <p>
-                Any dispute, difference, or claim arising out of or relating to our project engagements shall first be resolved through friendly, professional mediation. Where mediation fails to achieve resolution within 30 days, the dispute shall be resolved through binding arbitration under the rules of the **Arbitration and Mediation Act 2023** of Nigeria. The physical seat of arbitration and legal jurisdiction shall strictly be **Owerri, Imo State, Nigeria**.
+                Any dispute, difference, or claim arising out of or relating to our project engagements shall first be resolved through friendly, professional mediation. Where mediation fails to achieve resolution within 30 days, the dispute shall be resolved through binding arbitration under the rules of the Arbitration and Mediation Act 2023 of Nigeria. The physical seat of arbitration and legal jurisdiction shall strictly be Owerri, Imo State, Nigeria.
               </p>
             </section>
 
