@@ -146,9 +146,14 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-black/5 py-10 flex flex-col md:flex-row justify-between items-center gap-6 font-sans">
-          <p className="text-[10px] uppercase tracking-[0.2em] text-brand-subtle/60 font-semibold">
-            © {new Date().getFullYear()} Build with Ugo.B // All Rights Reserved.
-          </p>
+          <div className="flex flex-col gap-2 text-center md:text-left">
+            <p className="text-[10px] uppercase tracking-[0.2em] text-brand-subtle/60 font-semibold">
+              © {new Date().getFullYear()} Build with Ugo.B // All Rights Reserved.
+            </p>
+            <p className="text-[9px] uppercase tracking-[0.15em] text-brand-subtle/40">
+              CAC Registered Entity // Registration No: BN 8620310
+            </p>
+          </div>
           <div className="flex gap-8 text-[10px] uppercase tracking-widest text-brand-subtle/60 font-semibold">
             <Link href="/privacy" className="hover:text-primary transition-colors">Privacy</Link>
             <Link href="/terms" className="hover:text-primary transition-colors">Terms</Link>

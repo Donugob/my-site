@@ -41,6 +41,8 @@ const AboutPage = () => {
         url: "https://build-with-ugob.com.ng",
         logo: "https://build-with-ugob.com.ng/logo.png",
         image: "https://build-with-ugob.com.ng/ugob.webp",
+        taxID: "8620310",
+        identifier: "BN 8620310",
         description:
           "A CAC-registered web development agency in Owerri, Imo State, specializing in fast, modern, and SEO-dominant websites.",
         founder: {

@@ -54,7 +54,7 @@ const PrivacyPolicy = () => {
             <section className="space-y-4">
               <h2 className="text-lg font-serif font-medium text-brand-text tracking-tight">1. Regulatory Framework & Governance</h2>
               <p>
-                As a digital service operating in Imo State, Nigeria, we process personal data in strict compliance with the Nigeria Data Protection Act (NDPA) 2023 and regulations issued by the Nigeria Data Protection Commission (NDPC). Under these regulations, Build with Ugo.B acts as the Data Controller for the information you provide when accessing our forms, newsletter list, or interactive contact widgets.
+                As a digital service operating in Imo State, Nigeria, we process personal data in strict compliance with the Nigeria Data Protection Act (NDPA) 2023 and regulations issued by the Nigeria Data Protection Commission (NDPC). Under these regulations, Build with Ugo.B (registered with the Corporate Affairs Commission of the Federal Republic of Nigeria under Business Name Registration Number: BN 8620310) acts as the Data Controller for the information you provide when accessing our forms, newsletter list, or interactive contact widgets.
               </p>
             </section>
 

@@ -54,7 +54,7 @@ const TermsOfService = () => {
             <section className="space-y-4">
               <h2 className="text-lg font-serif font-medium text-brand-text tracking-tight">1. Scope of Services & Contractual Acceptance</h2>
               <p>
-                By accessing this website, submitting request inquiries, or commissioning projects with Build with Ugo.B, you express your full acceptance and agreement to comply with these terms. We specialize in bespoke digital products, including custom UI/UX design, frontend and backend engineering, search engine optimization (SEO), and custom e-commerce portal development.
+                By accessing this website, submitting request inquiries, or commissioning projects with Build with Ugo.B (registered with the Corporate Affairs Commission of the Federal Republic of Nigeria under Business Name Registration Number: BN 8620310), you express your full acceptance and agreement to comply with these terms. We specialize in bespoke digital products, including custom UI/UX design, frontend and backend engineering, search engine optimization (SEO), and custom e-commerce portal development.
               </p>
             </section>
 
