@@ -153,9 +153,9 @@ const PortfolioPage = () => {
                 },
                 {
                   quote:
-                    "The dedication to clean layout and easy navigation for student files was outstanding. The system has seen flawless execution since launch.",
+                    "The dedication to clean layout and easy navigation for votesphere organizer dashboard is outstanding. The system has been flawless.",
                   author: "Zane",
-                  role: "Director, Votesphere Portal",
+                  role: "Event Organizer, Votesphere",
                   avatar: "https://i.postimg.cc/k5PhDty1/IMG-20251011-WA0113.jpg",
                 },
               ].map((testimonial, idx) => (

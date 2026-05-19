@@ -27,9 +27,9 @@ const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "The website designed for our platform is incredibly clean, fast, and easy to use. Our clients constantly compliment us on the premium look and feel.",
+      "Jurismemo as been incredibly helpful for my studies. Thanks Ugo.B for building tools that matter.",
     name: "Chinedu Eze",
-    title: "Business Partner, Jurismemo",
+    title: "User, Jurismemo",
     image: "https://i.postimg.cc/HxcgH86V/Portrait-Placeholder.png",
   },
 ];

@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -149,9 +150,9 @@ const Footer = () => {
             © {new Date().getFullYear()} Build with Ugo.B // All Rights Reserved.
           </p>
           <div className="flex gap-8 text-[10px] uppercase tracking-widest text-brand-subtle/60 font-semibold">
-            <a href="#" className="hover:text-primary transition-colors">Privacy</a>
-            <a href="#" className="hover:text-primary transition-colors">Terms</a>
-            <a href="#" className="hover:text-primary transition-colors">Contact</a>
+            <Link href="/privacy" className="hover:text-primary transition-colors">Privacy</Link>
+            <Link href="/terms" className="hover:text-primary transition-colors">Terms</Link>
+            <Link href="/contact" className="hover:text-primary transition-colors">Contact</Link>
           </div>
         </div>
       </div>
